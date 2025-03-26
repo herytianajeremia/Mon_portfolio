@@ -1,0 +1,38 @@
+body {
+    font-family: 'Dosis', sans-serif;
+    color: #333;
+  }
+  
+  h1, h2, h5 {
+    font-family: 'Boston Angel', cursive;
+    color: #FF6F61;
+  }
+  
+  .text-orange {
+    color: #FF6F61;
+  }
+  
+  .hero {
+    height: 70vh;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  footer {
+    background-color: #333;
+  }
+  
+  footer p {
+    margin: 0;
+    color: #fff;
+  }
+  
+  .container {
+    max-width: 1140px;
+  }
+  
+  .btn-primary {
+    background-color: #FF6F61;
+    border-color: #FF6F61;
+  }
+  

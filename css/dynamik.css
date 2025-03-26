@@ -1,0 +1,350 @@
+@media screen and (max-width: 767px) {
+    .g-4 {
+        gap: 1rem;
+    }
+
+    .section-puzzle {
+        text-align: center;
+    }
+
+    .card-puzzle-down {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 1200px) {
+    .text-card {
+        display: flex;
+        font-size: 14px !important;
+    }
+    .titre_dyna {
+        color: #66a226;
+        font-size: 40px;
+    }
+    .section-puzzle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: 0.5s;
+    }
+}
+
+@media (max-width: 1200px) {
+    .titre_dyna {
+        color: #66a226;
+        font-size: 40px;
+    }
+
+    .section-puzzle {
+        display: flex;
+        flex-direction: column !important;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .titre_dyna {
+        display: flex;
+        color: #66a226;
+        font-size: 40px;
+    }
+
+    .text-card {
+        display: flex;
+        font-size: 15px !important;
+    }
+
+    .overlay-img1 h5 {
+        font-size: 15px;
+        line-height: 1.5;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .overlay-img h5 {
+        font-size: 15px;
+        line-height: 1.5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-puzzle-down {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: 0.5s;
+    }
+}
+
+@media (max-width: 768px) {
+    .titre_dyna {
+        color: #66a226;
+        font-size: 14px;
+    }
+
+    .section-puzzle {
+        display: flex;
+        flex-direction: column !important;
+        align-items: center;
+    }
+
+    .overlay-img1 h5 {
+        font-size: 15px;
+        line-height: 1.5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .overlay-img h5 {
+        font-size: 15px;
+        line-height: 1.5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-puzzle-down {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: 0.5s;
+    }
+
+    .text-card {
+        display: flex;
+        font-size: 15px !important;
+    }
+
+    .footer-top-band {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    .titre_dyna {
+        padding: 15px 15px;
+        font-size: 40px;
+    }
+
+    .text-dyna {
+        font-size: 15px;
+        padding: 15px 15px;
+    }
+
+    .flex-rectangle {
+        padding-left: 15px;
+        max-width: 100%;
+    }
+
+    .bg-card-text .text-card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 15px !important;
+    }
+
+    .overlay-img1 h5 {
+        font-size: 15px;
+        line-height: 1.5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .overlay-img h5 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-puzzle-down {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: 0.5s;
+    }
+
+    .footer-text h3,
+    p {
+        padding-left: 15px !important;
+    }
+}
+
+@media (max-width: 500px) {
+    .titre_dyna {
+        color: #66a226;
+        font-size: 14px;
+    }
+
+    .text-dyna {
+        transform: translateX(10px);
+        font-size: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bg-card-text .text-card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 75px;
+        font-size: 15px !important;
+    }
+
+    .overlay-img1 h5 {
+        font-size: 15px;
+        line-height: 1.5;
+        padding-top: 115px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .overlay-img h5 {
+        font-size: 15px;
+        line-height: 1.5;
+        padding-top: 115px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bg-card-text .text-card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 100px;
+        font-size: 15px !important;
+    }
+
+    .card-puzzle {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .img-logo {
+        width: 350px;
+        height: 150px;
+        transform: translate(45px);
+    }
+
+    .bg-card-text .text-card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 75%;
+        font-size: 15px !important;
+        transform: translateX(40px);
+    }
+
+    .overlay-img1 h5 {
+        font-size: 15px !important;
+        line-height: 1.5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 4rem;
+    }
+
+    .overlay-img h5 {
+        font-size: 15px;
+        line-height: 1.5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(50px);
+        font-size: 22px !important;
+    }
+}
+
+@media (max-width: 300px) {
+    .img-logo {
+        width: 350px;
+        height: 150px;
+        transform: translate(45px);
+    }
+
+    .bg-card-text .text-card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 145px;
+        font-size: 20px !important;
+    }
+
+    .overlay-img1 h5 {
+        font-size: 15px !important;
+        margin-left: 8rem;
+    }
+
+    .overlay-img h5 {
+        margin-left: 8rem;
+        font-size: 22px !important;
+    }
+
+    .bg-info-up {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .card-puzzle-down {
+        flex: 0 0 auto;
+        width: 123%;
+    }
+
+    .text-dyna {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1024px) {
+    .card-puzzle-down {
+        flex: 0 0 auto;
+        width: 123%;
+        transition: 0.5s;
+    }
+
+    .text-card {
+        font-size: 13px !important;
+    }
+
+    h5.card-title.title_connect {
+        font-size: 13px;
+        line-height: 1.5;
+        white-space: normal;
+    }
+
+    .text-dyna {
+        font-size: 16px;
+    }
+
+    .text-card {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .img-logo {
+        width: 100%;
+        height: auto;
+    }
+
+    .titre_dyna {
+        font-size: 15px;
+    }
+
+    .text-dyna {
+        font-size: 16px;
+    }
+
+    .rectangle1 {
+        width: 100%;
+    }
+}

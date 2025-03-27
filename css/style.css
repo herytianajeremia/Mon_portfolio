@@ -1309,12 +1309,84 @@ h3 {
   }
 }
 
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
   .filter .grid {
     max-width: 1120px;
   }
-}
+} */
+@media (max-width: 768px) {
+  /* Navigation */
+  .navbar-brand.d-lg-block {
+    display: none !important;
+  }
+  
+  /* Hero Section */
+  .hero-title {
+    font-size: 3rem;
+  }
+  .hero-content {
+    padding-top: 2rem;
+  }
+  .profile-3d {
+    width: 85%;
+    margin: 0 auto;
+  }
 
+  /* About Section */
+  .about-text h3 {
+    font-size: 1.8rem;
+  }
+  .count-up {
+    padding: 1.5rem;
+  }
+  .skill-card {
+    margin-bottom: 1.5rem;
+  }
+
+  /* Services */
+  .service-item {
+    margin-bottom: 2rem;
+  }
+  .service-content h3 {
+    font-size: 1.3rem;
+  }
+
+  /* Portfolio */
+  .filter .element-item {
+    width: 48%;
+    margin: 1%;
+  }
+
+  /* Testimonials */
+  .testimonial-card {
+    padding: 1.5rem;
+  }
+  .testimonial-text {
+    font-size: 1rem;
+  }
+
+  /* Contact */
+  .contact-card {
+    margin-bottom: 2rem;
+  }
+
+  .contact-card  p{
+    font-size: 0.9rem;
+  }
+  .form-floating > label {
+    font-size: 0.9rem;
+  }
+
+  /* Footer */
+  .footer .row {
+    flex-direction: column;
+    text-align: center;
+  }
+  .rounded-social-buttons {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+}
 @media (max-width: 768px) {
   .about-social {
     flex-direction: column;

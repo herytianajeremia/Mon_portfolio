@@ -217,6 +217,9 @@ h3 {
   overflow: hidden;
   margin-top: 3rem;
 }
+.hero-media img{
+  background-color: #0a192f;
+}
 .hero-description {
   font-weight: 350;
   max-width: 38ch;
@@ -229,6 +232,7 @@ h3 {
   text-align: end;
   position: relative;
 }
+
 .btn-text {
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -1354,6 +1358,7 @@ h3 {
   /* Portfolio */
   .filter .element-item {
     width: 48%;
+    height: auto;
     margin: 1%;
   }
 

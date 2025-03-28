@@ -789,12 +789,11 @@ h3 {
   margin-left: 0.25rem;
 }
 .filter .grid {
-  max-width: 100% !important;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  bottom: 10px;
+  width: 100%;
+  max-width: 351px;
+  margin: 0 auto;
 }
+
 .filter .element-item {
   display: inline-block;
   width: 351px;
@@ -1316,17 +1315,16 @@ h3 {
   }
 }
 
-/* @media (min-width: 1200px) {
+@media (min-width: 1200px) {
   .filter .grid {
     max-width: 1120px;
   }
-} */
+}
 @media (max-width: 768px) {
   /* Navigation */
-  .header .navbar-nav{
-    background-color: #0a192f!important;
+  .header .navbar-nav {
+    background-color: #0a192f !important;
   }
-  
   .navbar-brand.d-lg-block {
     display: none !important;
   }
@@ -1363,6 +1361,11 @@ h3 {
   }
 
   /* Portfolio */
+
+  .filter .grid {
+max-width: 100%;
+}
+
   .filter .element-item {
     width: 48%;
     height: auto;
@@ -1425,8 +1428,8 @@ h3 {
   }
 
   /* Navigation mobile */
-  .header .navbar-nav{
-    background-color: #0a192f!important;
+  .header .navbar-nav {
+    background-color: #0a192f !important;
   }
   .navbar-brand .logo {
     font-size: 1.4rem;
@@ -1478,8 +1481,8 @@ h3 {
     flex-wrap: wrap;
     gap: 0.5rem;
   }
-  .title h3{
-    font-size: 0.8rem!important;
+  .title h3 {
+    font-size: 0.8rem !important;
   }
 
   .btn-danger {

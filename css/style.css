@@ -217,7 +217,7 @@ h3 {
   overflow: hidden;
   margin-top: 3rem;
 }
-.hero-media img{
+.hero-media img {
   background-color: #0a192f;
 }
 .hero-description {
@@ -788,11 +788,13 @@ h3 {
   margin-right: 0.25rem;
   margin-left: 0.25rem;
 }
-
 .filter .grid {
-  max-width: 900px;
+  max-width: 100% !important;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  bottom: 10px;
 }
-
 .filter .element-item {
   display: inline-block;
   width: 351px;
@@ -865,6 +867,7 @@ h3 {
 .title h3 {
   color: var(--primary);
 }
+
 /* End Footer social incons */
 /* animation */
 .blob {
@@ -1290,7 +1293,7 @@ h3 {
 }
 
 #toTopBtn:hover .toTopBtnUp {
-  color: #fff!important;
+  color: #fff !important;
   transform: translateY(-2px);
 }
 
@@ -1320,10 +1323,14 @@ h3 {
 } */
 @media (max-width: 768px) {
   /* Navigation */
+  .header .navbar-nav{
+    background-color: #0a192f!important;
+  }
+  
   .navbar-brand.d-lg-block {
     display: none !important;
   }
-  
+
   /* Hero Section */
   .hero-title {
     font-size: 3rem;
@@ -1375,24 +1382,13 @@ h3 {
     margin-bottom: 2rem;
   }
 
-  .contact-card  p{
+  .contact-card p {
     font-size: 0.9rem;
   }
   .form-floating > label {
     font-size: 0.9rem;
   }
 
-  /* Footer */
-  .footer .row {
-    flex-direction: column;
-    text-align: center;
-  }
-  .rounded-social-buttons {
-    justify-content: center;
-    margin-top: 1rem;
-  }
-}
-@media (max-width: 768px) {
   .about-social {
     flex-direction: column;
   }
@@ -1410,15 +1406,28 @@ h3 {
   .blob {
     display: none;
   }
+  /* Footer */
+  .footer .row {
+    flex-direction: column;
+    text-align: center;
+  }
+  .rounded-social-buttons {
+    justify-content: center;
+    margin-top: 1rem;
+  }
 }
- @media (max-width: 575px) {
+@media (max-width: 575px) {
   /* Ajustements généraux */
-  .container, .container-lg {
+  .container,
+  .container-lg {
     padding-left: 15px;
     padding-right: 15px;
   }
 
   /* Navigation mobile */
+  .header .navbar-nav{
+    background-color: #0a192f!important;
+  }
   .navbar-brand .logo {
     font-size: 1.4rem;
   }
@@ -1468,6 +1477,13 @@ h3 {
   .button-group {
     flex-wrap: wrap;
     gap: 0.5rem;
+  }
+  .title h3{
+    font-size: 0.8rem!important;
+  }
+
+  .btn-danger {
+    font-size: 0.8rem;
   }
 
   /* Témoignages */

@@ -138,62 +138,68 @@ document.addEventListener("DOMContentLoaded", function () {
 //     });
 // }
 function sendMail() {
-  emailjs.init("IG7ctBcY-aKV-fJ1n");
+    emailjs.init("IG7ctBcY-aKV-fJ1n");
 
-  var submitBtn = document.getElementById("submitBtn");
-  var spinner = document.getElementById("spinner");
-  var buttonText = document.querySelector(".button-content");
-  var statusMessage = document.getElementById("statusMessage");
+    const submitBtn = document.getElementById("submitBtn");
+    const spinner = document.getElementById("spinner");
+    const buttonText = document.querySelector(".button-content");
+    const statusMessage = document.getElementById("statusMessage");
 
-  var name = document.querySelector("#name").value.trim();
-  var email = document.querySelector("#email").value.trim();
-  var object = document.querySelector("#object").value.trim();
-  var message = document.querySelector("#message").value.trim();
+    // Récupération des valeurs
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const subject = document.getElementById("subject").value.trim(); // Correction ici
+    const message = document.getElementById("message").value.trim();
 
-  // Vérification si un champ est vide
-  if (!name || !email || !message) {
-    statusMessage.textContent =
-      "Veuillez remplir tous les champs obligatoires.";
-    statusMessage.className = "error";
-    statusMessage.classList.remove("d-none");
-    return; // Arrêter la fonction
-  }
+    // Validation
+    if (!name || !email || !subject || !message) { // Ajout de la vérification du sujet
+        showError("Veuillez remplir tous les champs obligatoires.");
+        return;
+    }
 
-  // Désactiver le bouton et afficher le spinner
-  submitBtn.disabled = true;
-  spinner.classList.remove("d-none");
-  buttonText.style.display = "none";
+    // Configuration de l'envoi
+    submitBtn.disabled = true;
+    spinner.classList.remove("d-none");
+    buttonText.style.display = "none";
 
-  var params = { name, email, object, message };
+    const params = {
+        from_name: name,
+        from_email: email,
+        subject: subject,
+        message: message,
+        reply_to: email
+    };
 
-  var serviceID = "service_hrp1ha8";
-  var templateID = "template_37yph3d";
+    emailjs.send("service_hrp1ha8", "template_37yph3d", params)
+        .then(() => {
+            showSuccess("Mail envoyé avec succès !");
+            document.getElementById("contactForm").reset();
+        })
+        .catch((error) => {
+            console.error("Erreur d'envoi:", error);
+            showError("Erreur lors de l'envoi du message");
+        })
+        .finally(() => resetButtonState());
 
-  emailjs
-    .send(serviceID, templateID, params)
-    .then(() => {
-      statusMessage.textContent = "Mail envoyé avec succès !";
-      statusMessage.className = "success";
-      statusMessage.classList.remove("d-none");
-      document.getElementById("contactForm").reset(); // Réinitialiser le formulaire
-    })
-    .catch((err) => {
-      console.error(err);
-      statusMessage.textContent = "Erreur lors de l'envoi de l'email.";
-      statusMessage.className = "error";
-      statusMessage.classList.remove("d-none");
-    })
-    .finally(() => {
-      // Réactiver le bouton et masquer le spinner
-      submitBtn.disabled = false;
-      spinner.classList.add("d-none");
-      buttonText.style.display = "inline";
+    // Fonctions utilitaires
+    function showError(text) {
+        statusMessage.textContent = text;
+        statusMessage.className = "text-danger";
+        statusMessage.classList.remove("d-none");
+    }
 
-      // Masquer le message après 5 secondes
-      setTimeout(() => {
-        statusMessage.classList.add("d-none");
-      }, 5000);
-    });
+    function showSuccess(text) {
+        statusMessage.textContent = text;
+        statusMessage.className = "text-success";
+        statusMessage.classList.remove("d-none");
+    }
+
+    function resetButtonState() {
+        submitBtn.disabled = false;
+        spinner.classList.add("d-none");
+        buttonText.style.display = "inline";
+        setTimeout(() => statusMessage.classList.add("d-none"), 5000);
+    }
 }
 // Particule
 document.addEventListener('DOMContentLoaded', function() {

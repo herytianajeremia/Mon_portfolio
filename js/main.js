@@ -485,169 +485,199 @@ window.portfolioDebug = {
   recreateLayout: createPortfolioLayout
 };
 // ====== NAVIGATION SMOOTH SCROLL ======
+// ====== NAVIGATION SMOOTH SCROLL ======
 (function () {
-  const header = document.querySelector('.header');
+    const header = document.querySelector('.header');
+    const logoImages = document.querySelectorAll('.logo-img');
 
-  function headerHeight() {
-    return header ? header.offsetHeight : 80;
-  }
-
-  function scrollToElement(el) {
-    if (!el) return;
-    const y = Math.max(0, window.pageYOffset + el.getBoundingClientRect().top - headerHeight() - 8);
-    window.scrollTo({
-      top: y,
-      behavior: 'smooth'
-    });
-  }
-
-  function setActiveLink(id) {
-    document.querySelectorAll('.nav-link').forEach(n => n.classList.remove('active'));
-    const link = document.querySelector('.nav-link[href="#' + id + '"]');
-    if (link) link.classList.add('active');
-  }
-
-  function closeMobileMenu() {
-    const navbarCollapse = document.querySelector('.navbar-collapse.show');
-    if (navbarCollapse) {
-      try {
-        const bs = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse);
-        bs.hide();
-      } catch (e) {
-        navbarCollapse.classList.remove('show');
-      }
-    }
-  }
-
-  // Update URL to /<id> (root-based). usePush = true pour pushState (back enabled)
-  function updateUrl(id, usePush = true) {
-    const newPath = '/' + encodeURIComponent(id);
-    try {
-      if (usePush) window.history.pushState({
-        section: id
-      }, '', newPath);
-      else window.history.replaceState({
-        section: id
-      }, '', newPath);
-    } catch (e) {
-      console.warn('History API failed', e);
-    }
-  }
-
-  // handle anchor clicks (#id) -> scroll + pushState /<id>
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', function (e) {
-      const href = this.getAttribute('href');
-      if (!href || href === '#') return;
-      e.preventDefault();
-      const id = href.slice(1);
-      const target = document.getElementById(id);
-      if (target) {
-        scrollToElement(target);
-        setActiveLink(id);
-        updateUrl(id, true);
-      } else {
-        // if no element, go to root
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
+    // Préchargement des images de logo
+    function preloadLogos() {
+        logoImages.forEach(img => {
+            const defaultSrc = img.getAttribute('data-default');
+            const scrolledSrc = img.getAttribute('data-scrolled');
+            
+            const defaultImg = new Image();
+            defaultImg.src = defaultSrc;
+            
+            const scrolledImg = new Image();
+            scrolledImg.src = scrolledSrc;
         });
+    }
+
+    function updateLogo() {
+        const isScrolled = window.scrollY > 20;
+        logoImages.forEach(img => {
+            const newSrc = isScrolled ? 
+                img.getAttribute('data-scrolled') : 
+                img.getAttribute('data-default');
+            
+            // Changement direct sans effet visuel de mouvement
+            if (img.src !== newSrc) {
+                img.src = newSrc;
+            }
+        });
+    }
+
+    function scrollToElement(el) {
+        if (!el) return;
+        const headerHeight = header ? header.offsetHeight : 80;
+        const y = Math.max(0, window.pageYOffset + el.getBoundingClientRect().top - headerHeight - 8);
+        window.scrollTo({
+            top: y,
+            behavior: 'smooth'
+        });
+    }
+
+    function setActiveLink(id) {
+        document.querySelectorAll('.nav-link').forEach(n => n.classList.remove('active'));
+        const link = document.querySelector('.nav-link[href="#' + id + '"]');
+        if (link) link.classList.add('active');
+    }
+
+    function closeMobileMenu() {
+        const navbarCollapse = document.querySelector('.navbar-collapse.show');
+        if (navbarCollapse) {
+            try {
+                const bs = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse);
+                bs.hide();
+            } catch (e) {
+                navbarCollapse.classList.remove('show');
+            }
+        }
+    }
+
+    // Update URL to /<id> (root-based)
+    function updateUrl(id, usePush = true) {
+        const newPath = '/' + encodeURIComponent(id);
         try {
-          window.history.pushState({}, '', '/');
-        } catch (e) {}
-      }
-      closeMobileMenu();
-    }, {
-      passive: false
+            if (usePush) window.history.pushState({
+                section: id
+            }, '', newPath);
+            else window.history.replaceState({
+                section: id
+            }, '', newPath);
+        } catch (e) {
+            console.warn('History API failed', e);
+        }
+    }
+
+    // handle anchor clicks (#id)
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (!href || href === '#') return;
+            e.preventDefault();
+            const id = href.slice(1);
+            const target = document.getElementById(id);
+            if (target) {
+                scrollToElement(target);
+                setActiveLink(id);
+                updateUrl(id, true);
+            } else {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                try {
+                    window.history.pushState({}, '', '/');
+                } catch (e) {}
+            }
+            closeMobileMenu();
+        }, {
+            passive: false
+        });
     });
-  });
 
-  // On load: if pathname ends with a section name -> scroll to it
-  (function handleInitialPath() {
-    const path = window.location.pathname.replace(/\/$/, '');
-    const last = path.split('/').pop();
-    if (last && last !== 'index.html') {
-      const id = decodeURIComponent(last);
-      const el = document.getElementById(id);
-      if (el) {
-        setTimeout(() => {
-          scrollToElement(el);
-          setActiveLink(id);
-        }, 50);
-      }
+    // On load: if pathname ends with a section name -> scroll to it
+    (function handleInitialPath() {
+        const path = window.location.pathname.replace(/\/$/, '');
+        const last = path.split('/').pop();
+        if (last && last !== 'index.html') {
+            const id = decodeURIComponent(last);
+            const el = document.getElementById(id);
+            if (el) {
+                setTimeout(() => {
+                    scrollToElement(el);
+                    setActiveLink(id);
+                }, 50);
+            }
+        }
+        preloadLogos();
+    })();
+
+    // on scroll: header style + update replaceState
+    function onScroll() {
+        // Update header background sans mouvement
+        if (window.scrollY > 20) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+        
+        // Update logo
+        updateLogo();
+        
+        // Update active section
+        const headerHeight = header ? header.offsetHeight : 80;
+        const secs = document.querySelectorAll('section[id]');
+        let current = null;
+        const offset = headerHeight + 16;
+        secs.forEach(s => {
+            const r = s.getBoundingClientRect();
+            if (r.top <= offset && r.bottom > offset) current = s.id;
+        });
+        if (current) {
+            setActiveLink(current);
+            try {
+                window.history.replaceState({
+                    section: current
+                }, '', '/' + encodeURIComponent(current) + window.location.search);
+            } catch (e) {}
+        }
     }
-  })();
 
-  // on scroll: header style + update replaceState to reflect current section (no history flood)
-  function onScroll() {
-    if (window.scrollY > 20) header.classList.add('scrolled');
-    else header.classList.remove('scrolled');
-    const secs = document.querySelectorAll('main section[id]');
-    let current = null;
-    const offset = headerHeight() + 16;
-    secs.forEach(s => {
-      const r = s.getBoundingClientRect();
-      if (r.top <= offset && r.bottom > offset) current = s.id;
+    // Utiliser requestAnimationFrame pour des performances optimales
+    let ticking = false;
+    function optimizedScroll() {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                onScroll();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }
+
+    window.addEventListener('scroll', optimizedScroll, {
+        passive: true
     });
-    if (current) {
-      setActiveLink(current);
-      // replace URL to reflect current without pushing new history entries
-      try {
-        window.history.replaceState({
-          section: current
-        }, '', '/' + encodeURIComponent(current) + window.location.search);
-      } catch (e) {}
-    }
-  }
-  window.addEventListener('scroll', onScroll, {
-    passive: true
-  });
-  onScroll();
+    
+    // Initial call
+    onScroll();
 
-  // popstate: handle back/forward
-  window.addEventListener('popstate', function (evt) {
-    let id = null;
-    if (evt.state && evt.state.section) id = evt.state.section;
-    else {
-      const path = window.location.pathname.replace(/\/$/, '');
-      const last = path.split('/').pop();
-      if (last && last !== 'index.html') id = decodeURIComponent(last);
-    }
-    if (id) {
-      const el = document.getElementById(id);
-      if (el) scrollToElement(el);
-    } else {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    }
-  });
+    // popstate: handle back/forward
+    window.addEventListener('popstate', function (evt) {
+        let id = null;
+        if (evt.state && evt.state.section) id = evt.state.section;
+        else {
+            const path = window.location.pathname.replace(/\/$/, '');
+            const last = path.split('/').pop();
+            if (last && last !== 'index.html') id = decodeURIComponent(last);
+        }
+        if (id) {
+            const el = document.getElementById(id);
+            if (el) scrollToElement(el);
+        } else {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    });
 
-  // recalc on resize
-  window.addEventListener('resize', onScroll);
+    // recalc on resize
+    window.addEventListener('resize', onScroll);
 })();
-
-// Navbar scroll
-window.addEventListener("scroll", () => {
-  const header = document.querySelector(".header");
-  window.scrollY > 100 ?
-    header.classList.add("scrolled") :
-    header.classList.remove("scrolled");
-});
-
-// close mobile menu
-document.querySelectorAll(".nav-link").forEach((link) => {
-  link.addEventListener("click", () => {
-    const navbar = document.querySelector(".navbar-collapse");
-    const toggler = document.querySelector(".custom-toggler");
-
-    if (navbar && navbar.classList.contains("show")) {
-      new bootstrap.Collapse(navbar).hide();
-      toggler.setAttribute("aria-expanded", "false");
-    }
-  });
-});
 
 // section hero rotatif
 

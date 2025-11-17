@@ -97,8 +97,8 @@ h6 {
   color: var(--text-danger) !important;
 }
 
-.header.scrolled .logo {
-  color: var(--text-danger);
+.header.scrolled,.logo {
+  display:block;
 }
 /* Logo */
 .navbar-brand .logo {
@@ -1916,7 +1916,10 @@ a.social-1 {
   .navbar-brand.d-lg-block {
     display: none !important;
   }
-
+.nav-link:hover::after, .nav-link.active::after {
+    width: 25%;
+    background: var(--primary);
+}
   /* Hero Section */
   .hero-title {
     font-size: 3rem;

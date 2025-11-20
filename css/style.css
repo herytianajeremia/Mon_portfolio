@@ -96,10 +96,10 @@ h6 {
 .header.scrolled .nav-link {
   color: var(--text-danger) !important;
 }
-
-.header.scrolled,.logo {
-  display:block;
+.header.scrolled .logo {
+  display: block !important;
 }
+
 /* Logo */
 .navbar-brand .logo {
   font-size: 1.8rem;
@@ -113,7 +113,9 @@ h6 {
 .logo {
   color: var(--primary);
 }
-
+.navbar-brand .scrolled .logo {
+  display: none !important;
+}
 /* Liens navigation */
 .nav-link {
   color: #fff !important;
@@ -1917,7 +1919,7 @@ a.social-1 {
     display: none !important;
   }
 .nav-link:hover::after, .nav-link.active::after {
-    width: 25%;
+    width: 33%;
     background: var(--primary);
 }
   /* Hero Section */

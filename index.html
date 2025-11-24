@@ -38,18 +38,28 @@
     <div class="container">
       <nav class="navbar navbar-expand-lg">
         <!-- Logo pour mobile -->
-        <a class="navbar-brand d-lg-none" href="#home">
+        <a class="navbar-brand d-lg-none mobile-logo" href="#home">
           <img src="img/icon/logo.png" alt="Logo Jermia" class="logo-img" data-default="img/icon/logo.png"
             data-scrolled="img/icon/logo-mobile-dark.png" style="height:40px;width:auto;">
         </a>
 
-        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarNav" aria-expanded="false" aria-label="Menu mobile">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <!-- Logo pour desktop -->
+        <a class="navbar-brand d-none d-lg-block mx-4 desktop-logo" href="#home">
+          <img src="img/icon/logo.png" alt="Logo Jermia" class="logo-img" data-default="img/icon/logo.png"
+            data-scrolled="img/icon/logo-desktop-dark.png" style="height:50px;width:auto;">
+        </a>
+
+        <!-- Bouton Contact mobile + Toggler -->
+        <div class="d-flex d-lg-none align-items-center">
+          <a href="#contact" class="btn btn-outline-light btn-contact-mobile me-2">Contact</a>
+          <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav" aria-expanded="false" aria-label="Menu mobile">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
 
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul class="navbar-nav mx-auto me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link" href="#home">Accueil</a>
             </li>
@@ -59,29 +69,25 @@
             <li class="nav-item">
               <a class="nav-link" href="#service">Services</a>
             </li>
-          </ul>
-
-          <!-- Logo pour desktop -->
-          <a class="navbar-brand d-none d-lg-block mx-4" href="#home">
-            <img src="img/icon/logo.png" alt="Logo Jermia" class="logo-img" data-default="img/icon/logo.png"
-              data-scrolled="img/icon/logo-desktop-dark.png" style="height:50px;width:auto;">
-          </a>
-
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link" href="#portfolio">Réalisations</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#testimonials">Témoignages</a>
             </li>
+          </ul>
+
+          <!-- Bouton Contact desktop -->
+          <ul class="navbar-nav ms-end mb-2 mb-lg-0 d-none d-lg-flex">
             <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
+              <a href="#contact" class="btn btn-outline-light">Contact</a>
             </li>
           </ul>
         </div>
       </nav>
     </div>
   </header>
+
   <!-- header -->
   <main class="container">
     <!-- section start -->
@@ -95,7 +101,7 @@
 
             <h1 class="hero-title">
               <span class="text-stroke">Heritiana</span>
-              <span class="text-gradient"> Jeremia</span>
+              <span class="text-stroke"> Jeremia</span>
             </h1>
 
             <!-- Professions -->
@@ -319,44 +325,44 @@
         <div class="row justify-content-center">
           <div class="col-lg-8">
             <div class="section-title text-center">
-              <h2 class=" fw-bold text-light Title-underline mb-5">Ce que je fais</h2>
+              <h2 class="fw-bold text-light Title-underline mb-5">Ce que je fais</h2>
             </div>
           </div>
         </div>
-        <div class="row text-center">
+        <div class="row">
           <div class="col-md-6 col-lg-4 mb-4">
-            <div class="service-item shadow-sm bg-white">
-              <div class="icon my-4  fs-2">
+            <div class="service-item shadow-sm">
+              <div class="icon fs-2">
                 <i class="fas fa-code"></i>
               </div>
               <div class="service-content">
                 <h3 class="fs-5">Intégration Web</h3>
-                <p class="mb-4">Développement de sites web modernes et performants avec HTML, CSS, et JavaScript.</p>
+                <p class="mb-0">Développement de sites web modernes et performants avec HTML, CSS, et JavaScript.</p>
               </div>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-4 mb-4">
-            <div class="service-item shadow-sm bg-white">
-              <div class="icon my-4  fs-2">
+            <div class="service-item shadow-sm">
+              <div class="icon fs-2">
                 <i class="fas fa-palette"></i>
               </div>
               <div class="service-content">
                 <h3 class="fs-5">Conception UI/UX</h3>
-                <p class="mb-4">Création d'interfaces utilisateur intuitives et fluides pour une meilleure expérience
+                <p class="mb-0">Création d'interfaces utilisateur intuitives et fluides pour une meilleure expérience
                   digitale.</p>
               </div>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-4 mb-4">
-            <div class="service-item shadow-sm bg-white">
-              <div class="icon my-4  fs-2">
+            <div class="service-item shadow-sm">
+              <div class="icon fs-2">
                 <i class="fab fa-figma"></i>
               </div>
               <div class="service-content">
                 <h3 class="fs-5">Design avec Figma</h3>
-                <p class="mb-4">Création de maquettes interactives et prototypes avancés pour un workflow optimisé.</p>
+                <p class="mb-0">Création de maquettes interactives et prototypes avancés pour un workflow optimisé.</p>
               </div>
             </div>
           </div>

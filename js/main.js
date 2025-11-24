@@ -726,38 +726,50 @@ if (typedTextSpan) {
 }
 
 // Animation pause au survol, reprise quand la souris quitte
-document.addEventListener("DOMContentLoaded", () => {
-  const rotatingGroup = document.getElementById("rotatingGroup");
-  const icons = document.querySelectorAll(".social");
-
-  if (rotatingGroup) {
-    // Arrêter l'animation au survol de n'importe quelle icône
-    icons.forEach(icon => {
-      icon.addEventListener("mouseenter", () => {
-        rotatingGroup.style.animationPlayState = "paused";
-      });
-
-      icon.addEventListener("mouseleave", () => {
-        rotatingGroup.style.animationPlayState = "running";
-      });
-
-      // Clic simple pour ouvrir le lien
-      icon.addEventListener("click", (e) => {
-        e.preventDefault();
-        const href = icon.getAttribute("href");
-        if (href && href !== "#") {
-          window.open(href, icon.getAttribute("target") || "_self");
-        }
-      });
-    });
+document.addEventListener('DOMContentLoaded', function() {
+  const header = document.querySelector('.header');
+  const mobileLogo = document.querySelector('.logo-img-mobile');
+  const desktopLogo = document.querySelector('.logo-img-desktop');
+  
+  function updateHeaderOnScroll() {
+    const scrollPosition = window.scrollY;
+    
+    if (scrollPosition > 50) {
+      header.classList.add('scrolled');
+      
+      // Desktop logo - afficher avec animation
+      if (desktopLogo) {
+        desktopLogo.style.opacity = '1';
+        desktopLogo.style.visibility = 'visible';
+      }
+      
+      // Mobile logo - changer si nécessaire
+      if (mobileLogo) {
+        mobileLogo.style.transform = 'scale(0.95)';
+      }
+      
+    } else {
+      header.classList.remove('scrolled');
+      
+      // Desktop logo - cacher
+      if (desktopLogo) {
+        desktopLogo.style.opacity = '0';
+        desktopLogo.style.visibility = 'hidden';
+      }
+      
+      // Mobile logo - revenir à la normale
+      if (mobileLogo) {
+        mobileLogo.style.transform = 'scale(1)';
+      }
+    }
   }
-});
 
-// Animation du toggle
-document.querySelector(".custom-toggler")?.addEventListener("click", function () {
-  this.classList.toggle("active");
+  // Écouter l'événement de scroll
+  window.addEventListener('scroll', updateHeaderOnScroll);
+  
+  // Vérifier au chargement de la page
+  updateHeaderOnScroll();
 });
-
 // WOW animations
 new WOW({
   offset: 100,

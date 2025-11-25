@@ -1,96 +1,95 @@
 // ====== PORTFOLIO ======
 
- // Données du portfolio
-const portfolioData = [
-  { 
-    category: "filter-app", 
-    image: "img/img-projet/1.png", 
-    title: "Design Project 1", 
-    link: "https://softimad.com" 
+// Données du portfolio
+const portfolioData = [{
+    category: "filter-app",
+    image: "img/img-projet/1.png",
+    title: "Design Project 1",
+    link: "https://softimad.com"
   },
-  { 
-    category: "filter-product", 
-    image: "img/img-projet/Group 10.png", 
-    title: "Development Project 1", 
-    link: "https://masovia-madagascar.com/" 
+  {
+    category: "filter-product",
+    image: "img/img-projet/Group 10.png",
+    title: "Development Project 1",
+    link: "https://masovia-madagascar.com/"
   },
-  { 
-    category: "filter-product", 
-    image: "img/img-projet/Annonce.png", 
-    title: "Development Project 2", 
-    link: "https://annonce-legale-officielle.fr" 
+  {
+    category: "filter-product",
+    image: "img/img-projet/Annonce.png",
+    title: "Development Project 2",
+    link: "https://annonce-legale-officielle.fr"
   },
-  { 
-    category: "filter-product", 
-    image: "img/img-projet/00.png", 
-    title: "Development Project 3", 
-    link: "https://app.dynamikmood.com/login" 
+  {
+    category: "filter-product",
+    image: "img/img-projet/00.png",
+    title: "Development Project 3",
+    link: "https://app.dynamikmood.com/login"
   },
-  { 
-    category: "filter-product", 
-    image: "img/img-projet/portfolio.PNG", 
-    title: "Development Project 4", 
-    link: "#" 
+  {
+    category: "filter-product",
+    image: "img/img-projet/portfolio.PNG",
+    title: "Development Project 4",
+    link: "#"
   },
-  { 
-    category: "filter-product", 
-    image: "img/img-projet/img-g3.png", 
-    title: "Development Project 5", 
-    link: "https://rh-muriel.netlify.app/" 
+  {
+    category: "filter-product",
+    image: "img/img-projet/img-g3.png",
+    title: "Development Project 5",
+    link: "https://rh-muriel.netlify.app/"
   },
-  { 
-    category: "filter-product", 
-    image: "img/img-projet/app.dynamikmood.com 1.png", 
-    title: "Development Project 6", 
-    link: "https://app.dynamikmood.com/our_offers" 
+  {
+    category: "filter-product",
+    image: "img/img-projet/app.dynamikmood.com 1.png",
+    title: "Development Project 6",
+    link: "https://app.dynamikmood.com/our_offers"
   },
-  { 
-    category: "filter-app", 
-    image: "img/img-projet/group-9.png", 
-    title: "Design Project 2", 
-    link: "https://www.figma.com" 
+  {
+    category: "filter-app",
+    image: "img/img-projet/group-9.png",
+    title: "Design Project 2",
+    link: "https://www.figma.com"
   },
-  { 
-    category: "filter-app", 
-    image: "img/img-projet/SitSoftimad.png", 
-    title: "Design Project 3", 
-    link: "https://www.figma.com/design/xA0RmMEelSvskNM5PQS5PL/Untitled?node-id=92-666&t=YqQR67v9jK02xevr-0" 
+  {
+    category: "filter-app",
+    image: "img/img-projet/SitSoftimad.png",
+    title: "Design Project 3",
+    link: "https://www.figma.com/design/xA0RmMEelSvskNM5PQS5PL/Untitled?node-id=92-666&t=YqQR67v9jK02xevr-0"
   },
-  { 
-    category: "filter-app", 
-    image: "img/img-projet/group-3.png", 
-    title: "Design Project 4", 
-    link: "https://www.figma.com/design/saeth76IYou0L4ZYE8FnEZ/Untitled?node-id=0-1&t=O9lRfsrSpegnp6Sg-0" 
+  {
+    category: "filter-app",
+    image: "img/img-projet/group-3.png",
+    title: "Design Project 4",
+    link: "https://www.figma.com/design/saeth76IYou0L4ZYE8FnEZ/Untitled?node-id=0-1&t=O9lRfsrSpegnp6Sg-0"
   },
-  { 
-    category: "filter-app", 
-    image: "img/img-projet/C-4.png", 
-    title: "Design Project 5", 
-    link: "https://www.figma.com/design/saeth76IYou0L4ZYE8FnEZ/Untitled?node-id=0-1&t=O9lRfsrSpegnp6Sg-0" 
+  {
+    category: "filter-app",
+    image: "img/img-projet/C-4.png",
+    title: "Design Project 5",
+    link: "https://www.figma.com/design/saeth76IYou0L4ZYE8FnEZ/Untitled?node-id=0-1&t=O9lRfsrSpegnp6Sg-0"
   },
-  { 
-    category: "filter-app", 
-    image: "img/img-projet/Group.png", 
-    title: "Design Project 6", 
-    link: "https://www.figma.com/design/ROHT0uuvpLkLpfH3d7x8aj/Untitled?node-id=0-1&p=f&t=3wOT98pRWiqxKVoB-0" 
+  {
+    category: "filter-app",
+    image: "img/img-projet/Group.png",
+    title: "Design Project 6",
+    link: "https://www.figma.com/design/ROHT0uuvpLkLpfH3d7x8aj/Untitled?node-id=0-1&p=f&t=3wOT98pRWiqxKVoB-0"
   },
-  { 
-    category: "filter-app", 
-    image: "img/img-projet/Accueil0.png", 
-    title: "Design Project 7", 
-    link: "https://www.figma.com/design/PG8AMLQ6UGNAAyzgC9g5tl/Untitled?t=Gi1nlSVS5jLuHgL0-0" 
+  {
+    category: "filter-app",
+    image: "img/img-projet/Accueil0.png",
+    title: "Design Project 7",
+    link: "https://www.figma.com/design/PG8AMLQ6UGNAAyzgC9g5tl/Untitled?t=Gi1nlSVS5jLuHgL0-0"
   },
-  { 
-    category: "filter-product", 
-    image: "img/img-projet/Alo-1.png", 
-    title: "Development Project 7", 
-    link: "https://creation-societe-alo.web.app" 
+  {
+    category: "filter-product",
+    image: "img/img-projet/Alo-1.png",
+    title: "Development Project 7",
+    link: "https://creation-societe-alo.web.app"
   }
 ];
 
 // État global
-let portfolioState = { 
-  allItems: portfolioData, 
+let portfolioState = {
+  allItems: portfolioData,
   currentFilter: '*',
   isModalOpen: false
 };
@@ -100,25 +99,25 @@ let modalBackdrop, modalIframe, modalTitle, modalInfoTitle, modalLink, modalInfo
 let openNewTabBtn, modalClose, modalCloseFooter;
 
 // Initialisation quand le DOM est chargé
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   console.log('🚀 Initialisation du portfolio...');
-  
+
   // Initialiser les éléments modaux
   initializeModalElements();
-  
+
   // Créer la mise en page
   createPortfolioLayout();
-  
+
   // Configurer les filtres
   setupFilters();
-  
+
   // Configurer les événements de la modal
   setupModalEvents();
-  
+
   // Configurer le redimensionnement
   setTimeout(handleResize, 200);
   window.addEventListener('resize', debounce(handleResize, 200));
-  
+
   console.log('✅ Portfolio initialisé avec succès');
 });
 
@@ -132,7 +131,7 @@ function initializeModalElements() {
   openNewTabBtn = document.getElementById('openNewTab');
   modalClose = document.getElementById('modalClose');
   modalCloseFooter = document.getElementById('modalCloseFooter');
-  
+
   console.log('🔧 Éléments modaux initialisés');
 }
 
@@ -141,14 +140,14 @@ function setupModalEvents() {
   if (modalClose) {
     modalClose.addEventListener('click', closeModal);
   }
-  
+
   if (modalCloseFooter) {
     modalCloseFooter.addEventListener('click', closeModal);
   }
 
   // Fermer en cliquant sur le backdrop
   if (modalBackdrop) {
-    modalBackdrop.addEventListener('click', function(e) {
+    modalBackdrop.addEventListener('click', function (e) {
       if (e.target === modalBackdrop) {
         closeModal();
       }
@@ -157,7 +156,7 @@ function setupModalEvents() {
 
   // Ouvrir dans un nouvel onglet
   if (openNewTabBtn) {
-    openNewTabBtn.addEventListener('click', function() {
+    openNewTabBtn.addEventListener('click', function () {
       const href = modalLink ? modalLink.href : '#';
       if (href && href !== '#' && href !== window.location.href) {
         window.open(href, '_blank', 'noopener,noreferrer');
@@ -166,7 +165,7 @@ function setupModalEvents() {
   }
 
   // Fermer avec la touche Échap
-  document.addEventListener('keydown', function(e) {
+  document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && portfolioState.isModalOpen) {
       closeModal();
     }
@@ -177,19 +176,19 @@ function setupModalEvents() {
 
 function setupFilters() {
   document.querySelectorAll('.portfolio-flters li').forEach(li => {
-    li.addEventListener('click', function() {
+    li.addEventListener('click', function () {
       // Retirer la classe active de tous les filtres
       document.querySelectorAll('.portfolio-flters li').forEach(item => {
         item.classList.remove('filter-active');
       });
-      
+
       // Ajouter la classe active au filtre cliqué
       this.classList.add('filter-active');
-      
+
       // Mettre à jour le filtre courant
       portfolioState.currentFilter = this.getAttribute('data-filter');
       console.log(`🎯 Filtre changé pour: ${portfolioState.currentFilter}`);
-      
+
       // Recréer la mise en page
       createPortfolioLayout();
     });
@@ -209,9 +208,9 @@ function createPortfolioLayout() {
   container.innerHTML = '';
 
   // Filtrer les éléments
-  const filteredItems = portfolioState.currentFilter === '*' 
-    ? [...portfolioState.allItems] 
-    : portfolioState.allItems.filter(item => item.category === portfolioState.currentFilter.replace('.', ''));
+  const filteredItems = portfolioState.currentFilter === '*' ?
+    [...portfolioState.allItems] :
+    portfolioState.allItems.filter(item => item.category === portfolioState.currentFilter.replace('.', ''));
 
   console.log(`📁 Éléments filtrés: ${filteredItems.length} projets`);
 
@@ -228,7 +227,7 @@ function createPortfolioLayout() {
   // Organiser en colonnes (2 éléments par colonne)
   const itemsPerColumn = 2;
   const columns = [];
-  
+
   for (let i = 0; i < filteredItems.length; i += itemsPerColumn) {
     const columnItems = filteredItems.slice(i, i + itemsPerColumn);
     columns.push(columnItems);
@@ -238,7 +237,7 @@ function createPortfolioLayout() {
 
   // Dupliquer les colonnes pour l'effet infini
   const duplicatedColumns = [...columns, ...columns, ...columns];
-  
+
   // Créer et ajouter les colonnes
   duplicatedColumns.forEach(columnItems => {
     const columnElement = createColumn(columnItems);
@@ -262,7 +261,7 @@ function createColumn(items) {
 
   const clone = template.content.cloneNode(true);
   const column = clone.querySelector('.portfolio-grid-column');
-  
+
   if (!column) {
     console.error('❌ Colonne non trouvée dans le template');
     return null;
@@ -287,7 +286,7 @@ function createPortfolioItem(data) {
   }
 
   const clone = template.content.cloneNode(true);
-  
+
   // Récupérer les éléments
   const img = clone.querySelector('img');
   const titleEl = clone.querySelector('.title');
@@ -302,12 +301,12 @@ function createPortfolioItem(data) {
   // Configurer l'image
   img.alt = data.title || 'Projet portfolio';
   img.src = data.image;
-  
+
   // Gestion des erreurs d'image
-  img.onerror = function() {
+  img.onerror = function () {
     console.warn(`⚠️ Image non trouvée: ${data.image}`);
     img.style.display = 'none';
-    
+
     const imgFrame = clone.querySelector('.img-frame');
     if (imgFrame) {
       if (!imgFrame.querySelector('.image-placeholder')) {
@@ -324,7 +323,7 @@ function createPortfolioItem(data) {
     }
   };
 
-  img.onload = function() {
+  img.onload = function () {
     console.log(`✅ Image chargée: ${data.image}`);
   };
 
@@ -332,7 +331,7 @@ function createPortfolioItem(data) {
   titleEl.textContent = data.title;
 
   // Configurer les événements
-  viewBtn.addEventListener('click', function(e) {
+  viewBtn.addEventListener('click', function (e) {
     e.preventDefault();
     e.stopPropagation();
     console.log(`👁️ Ouverture modal pour: ${data.title}`);
@@ -340,7 +339,7 @@ function createPortfolioItem(data) {
   });
 
   previewLink.href = data.link || '#';
-  previewLink.addEventListener('click', function(e) {
+  previewLink.addEventListener('click', function (e) {
     e.preventDefault();
     console.log(`👁️ Ouverture modal pour: ${data.title}`);
     openModalFor(data);
@@ -356,7 +355,7 @@ function openModalFor(item) {
   }
 
   const url = item.link || '#';
-  
+
   console.log(`🔄 Ouverture modal: ${item.title} - ${url}`);
 
   // Mettre à jour les informations
@@ -375,7 +374,7 @@ function openModalFor(item) {
     }
   } else {
     modalIframe.style.display = 'block';
-    
+
     // Gérer les liens Figma
     if (url.includes('figma.com')) {
       const embedUrl = `https://www.figma.com/embed?embed_host=share&url=${encodeURIComponent(url)}`;
@@ -391,11 +390,11 @@ function openModalFor(item) {
     }
 
     // Gérer les erreurs
-    modalIframe.onload = function() {
+    modalIframe.onload = function () {
       console.log('✅ Iframe chargée avec succès');
     };
 
-    modalIframe.onerror = function() {
+    modalIframe.onerror = function () {
       console.error('❌ Erreur de chargement iframe');
       if (modalInfoDesc) {
         modalInfoDesc.textContent = 'Impossible de charger l\'aperçu. Le site peut bloquer l\'affichage en iframe. Utilisez le bouton "Ouvrir dans un nouvel onglet".';
@@ -420,18 +419,18 @@ function closeModal() {
   modalBackdrop.style.display = 'none';
   modalBackdrop.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
-  
+
   if (modalIframe) {
     modalIframe.src = 'about:blank';
   }
-  
+
   portfolioState.isModalOpen = false;
 }
 
 function handleResize() {
   const wrapper = document.getElementById('auto-scroll-wrapper');
   if (!wrapper) return;
-  
+
   const columns = wrapper.querySelectorAll('.portfolio-grid-column');
   if (columns.length === 0) return;
 
@@ -485,200 +484,65 @@ window.portfolioDebug = {
   recreateLayout: createPortfolioLayout
 };
 // ====== NAVIGATION SMOOTH SCROLL ======
-// ====== NAVIGATION SMOOTH SCROLL ======
+window.addEventListener('scroll', function () {
+  const navbar = document.querySelector('.navbar');
+  if (window.scrollY > 50) navbar.classList.add('navbar-scrolled');
+  else navbar.classList.remove('navbar-scrolled');
+});
 (function () {
-    const header = document.querySelector('.header');
-    const logoImages = document.querySelectorAll('.logo-img');
+  const collapseEl = document.getElementById('navbarNav');
+  if (!collapseEl) return;
 
-    // Préchargement des images de logo
-    function preloadLogos() {
-        logoImages.forEach(img => {
-            const defaultSrc = img.getAttribute('data-default');
-            const scrolledSrc = img.getAttribute('data-scrolled');
-            
-            const defaultImg = new Image();
-            defaultImg.src = defaultSrc;
-            
-            const scrolledImg = new Image();
-            scrolledImg.src = scrolledSrc;
+  collapseEl.addEventListener('show.bs.collapse', function () {
+    document.body.classList.add('no-scroll');
+  });
+
+  collapseEl.addEventListener('hidden.bs.collapse', function () {
+    document.body.classList.remove('no-scroll');
+  });
+
+  const allNavbarAnchors = document.querySelectorAll('.navbar a[href^="#"]');
+
+  allNavbarAnchors.forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const id = this.getAttribute('href').slice(1);
+      if (!id) return;
+      const target = document.getElementById(id);
+      if (!target) return;
+
+      const navbar = document.querySelector('.navbar');
+      const navbarHeight = navbar ? navbar.offsetHeight : 56;
+
+      const offsetTop = target.getBoundingClientRect().top + window.scrollY - navbarHeight - 8;
+
+      window.scrollTo({
+        top: Math.max(0, offsetTop),
+        behavior: 'smooth'
+      });
+
+      if (collapseEl.classList.contains('show')) {
+        const bs = bootstrap.Collapse.getInstance(collapseEl) || new bootstrap.Collapse(collapseEl, {
+          toggle: false
         });
-    }
+        bs.hide();
+      }
 
-    function updateLogo() {
-        const isScrolled = window.scrollY > 20;
-        logoImages.forEach(img => {
-            const newSrc = isScrolled ? 
-                img.getAttribute('data-scrolled') : 
-                img.getAttribute('data-default');
-            
-            // Changement direct sans effet visuel de mouvement
-            if (img.src !== newSrc) {
-                img.src = newSrc;
-            }
-        });
-    }
+      document.querySelectorAll('.navbar-nav .nav-link').forEach(n => n.classList.remove('active'));
+      if (this.classList.contains('nav-link')) this.classList.add('active');
+      else {
+        const related = document.querySelector('.navbar-nav .nav-link[href="#' + id + '"]');
+        if (related) related.classList.add('active');
+      }
 
-    function scrollToElement(el) {
-        if (!el) return;
-        const headerHeight = header ? header.offsetHeight : 80;
-        const y = Math.max(0, window.pageYOffset + el.getBoundingClientRect().top - headerHeight - 8);
-        window.scrollTo({
-            top: y,
-            behavior: 'smooth'
-        });
-    }
-
-    function setActiveLink(id) {
-        document.querySelectorAll('.nav-link').forEach(n => n.classList.remove('active'));
-        const link = document.querySelector('.nav-link[href="#' + id + '"]');
-        if (link) link.classList.add('active');
-    }
-
-    function closeMobileMenu() {
-        const navbarCollapse = document.querySelector('.navbar-collapse.show');
-        if (navbarCollapse) {
-            try {
-                const bs = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse);
-                bs.hide();
-            } catch (e) {
-                navbarCollapse.classList.remove('show');
-            }
-        }
-    }
-
-    // Update URL to /<id> (root-based)
-    function updateUrl(id, usePush = true) {
-        const newPath = '/' + encodeURIComponent(id);
-        try {
-            if (usePush) window.history.pushState({
-                section: id
-            }, '', newPath);
-            else window.history.replaceState({
-                section: id
-            }, '', newPath);
-        } catch (e) {
-            console.warn('History API failed', e);
-        }
-    }
-
-    // handle anchor clicks (#id)
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            if (!href || href === '#') return;
-            e.preventDefault();
-            const id = href.slice(1);
-            const target = document.getElementById(id);
-            if (target) {
-                scrollToElement(target);
-                setActiveLink(id);
-                updateUrl(id, true);
-            } else {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-                try {
-                    window.history.pushState({}, '', '/');
-                } catch (e) {}
-            }
-            closeMobileMenu();
-        }, {
-            passive: false
-        });
+      const newPath = '/' + id;
+      history.replaceState({}, '', newPath);
     });
-
-    // On load: if pathname ends with a section name -> scroll to it
-    (function handleInitialPath() {
-        const path = window.location.pathname.replace(/\/$/, '');
-        const last = path.split('/').pop();
-        if (last && last !== 'index.html') {
-            const id = decodeURIComponent(last);
-            const el = document.getElementById(id);
-            if (el) {
-                setTimeout(() => {
-                    scrollToElement(el);
-                    setActiveLink(id);
-                }, 50);
-            }
-        }
-        preloadLogos();
-    })();
-
-    // on scroll: header style + update replaceState
-    function onScroll() {
-        // Update header background sans mouvement
-        if (window.scrollY > 20) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-        
-        // Update logo
-        updateLogo();
-        
-        // Update active section
-        const headerHeight = header ? header.offsetHeight : 80;
-        const secs = document.querySelectorAll('section[id]');
-        let current = null;
-        const offset = headerHeight + 16;
-        secs.forEach(s => {
-            const r = s.getBoundingClientRect();
-            if (r.top <= offset && r.bottom > offset) current = s.id;
-        });
-        if (current) {
-            setActiveLink(current);
-            try {
-                window.history.replaceState({
-                    section: current
-                }, '', '/' + encodeURIComponent(current) + window.location.search);
-            } catch (e) {}
-        }
-    }
-
-    // Utiliser requestAnimationFrame pour des performances optimales
-    let ticking = false;
-    function optimizedScroll() {
-        if (!ticking) {
-            requestAnimationFrame(() => {
-                onScroll();
-                ticking = false;
-            });
-            ticking = true;
-        }
-    }
-
-    window.addEventListener('scroll', optimizedScroll, {
-        passive: true
-    });
-    
-    // Initial call
-    onScroll();
-
-    // popstate: handle back/forward
-    window.addEventListener('popstate', function (evt) {
-        let id = null;
-        if (evt.state && evt.state.section) id = evt.state.section;
-        else {
-            const path = window.location.pathname.replace(/\/$/, '');
-            const last = path.split('/').pop();
-            if (last && last !== 'index.html') id = decodeURIComponent(last);
-        }
-        if (id) {
-            const el = document.getElementById(id);
-            if (el) scrollToElement(el);
-        } else {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-    });
-
-    // recalc on resize
-    window.addEventListener('resize', onScroll);
+  });
 })();
 
+// ====== End navigation =======
 // section hero rotatif
 
 //========== Initialisation des animations=========
@@ -726,37 +590,37 @@ if (typedTextSpan) {
 }
 
 // Animation pause au survol, reprise quand la souris quitte
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const header = document.querySelector('.header');
   const mobileLogo = document.querySelector('.logo-img-mobile');
   const desktopLogo = document.querySelector('.logo-img-desktop');
-  
+
   function updateHeaderOnScroll() {
     const scrollPosition = window.scrollY;
-    
+
     if (scrollPosition > 50) {
       header.classList.add('scrolled');
-      
+
       // Desktop logo - afficher avec animation
       if (desktopLogo) {
         desktopLogo.style.opacity = '1';
         desktopLogo.style.visibility = 'visible';
       }
-      
+
       // Mobile logo - changer si nécessaire
       if (mobileLogo) {
         mobileLogo.style.transform = 'scale(0.95)';
       }
-      
+
     } else {
       header.classList.remove('scrolled');
-      
+
       // Desktop logo - cacher
       if (desktopLogo) {
         desktopLogo.style.opacity = '0';
         desktopLogo.style.visibility = 'hidden';
       }
-      
+
       // Mobile logo - revenir à la normale
       if (mobileLogo) {
         mobileLogo.style.transform = 'scale(1)';
@@ -766,7 +630,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Écouter l'événement de scroll
   window.addEventListener('scroll', updateHeaderOnScroll);
-  
+
   // Vérifier au chargement de la page
   updateHeaderOnScroll();
 });
@@ -946,7 +810,8 @@ document.addEventListener('DOMContentLoaded', () => {
       try {
         window.pJSDom.forEach(inst => inst && inst.pJS && inst.pJS.fn.vendors.destroypJS());
       } catch (e) {
-        /* silent */ }
+        /* silent */
+      }
       window.pJSDom = [];
     }
   }

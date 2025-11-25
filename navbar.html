@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navbar Bootstrap Responsive - Corrigée</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --navbar-height: 56px;
+      --nav-underline-width: 80%;
+      --navbar-border-color: rgba(255, 255, 255, 0.08);
+      --navbar-border-scrolled: rgba(255, 255, 255, 0.12);
+      --navbar-border-size: 1px;
+    }
+
+    .navbar.fixed-top {
+      z-index: 1100;
+      border-bottom: var(--navbar-border-size) solid var(--navbar-border-color);
+      transition: border-color 0.25s ease, background-color 0.25s ease;
+      backdrop-filter: none;
+    }
+
+    .navbar-nav {
+      transition: background-color 0.3s ease;
+      background-color: transparent;
+    }
+
+    .navbar-scrolled {
+      background-color: #000 !important;
+      border-bottom-color: var(--navbar-border-scrolled) !important;
+    }
+
+    .navbar-toggler {
+      border: none;
+      padding: 0;
+      width: 36px;
+      height: 36px;
+      position: relative;
+      margin-left: 10px;
+    }
+
+    .navbar-toggler:focus {
+      box-shadow: none;
+    }
+
+    .navbar-toggler span {
+      display: block;
+      background-color: #fff;
+      height: 2px;
+      width: 100%;
+      margin: 6px 0;
+      transition: transform 0.35s ease, opacity 0.25s ease;
+      position: relative;
+      transform-origin: center;
+    }
+
+    .navbar-toggler[aria-expanded="true"] span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    .navbar-toggler[aria-expanded="true"] span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .navbar-toggler[aria-expanded="true"] span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .contact-btn {
+      background-color: #007bff;
+      border: none;
+      color: white;
+      padding: 8px 20px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .contact-btn:hover {
+      background-color: #0056b3;
+      color: white;
+    }
+
+    .mobile-contact {
+      margin-left: auto;
+      margin-right: 10px;
+    }
+
+    .desktop-contact {
+      margin-left: 15px;
+    }
+
+    .navbar-nav .nav-link {
+      font-weight: 500;
+      margin: 0 8px;
+      position: relative;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background: #2b8cff;
+      transition: width 0.25s ease;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: var(--nav-underline-width);
+    }
+
+    @media (min-width: 992px) {
+      .navbar-nav {
+        margin-left: auto;
+        margin-right: auto;
+        flex-direction: row;
+      }
+    }
+
+    @media (max-width: 991.98px) {
+      .navbar-collapse {
+        position: fixed;
+        top: var(--navbar-height);
+        left: 0;
+        width: 100%;
+        height: calc(100% - var(--navbar-height));
+        background: rgba(0, 0, 0, 0.95);
+        transform: translateX(-100%);
+        transition: transform 0.35s ease;
+        padding: 1.5rem;
+        z-index: 1050;
+        overflow-y: auto;
+      }
+
+      .navbar-collapse.show {
+        transform: translateX(0);
+      }
+
+      .navbar-nav {
+        margin-top: 10px;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+
+      .navbar-nav .nav-link {
+        font-size: 1.15rem;
+        color: #fff;
+      }
+
+      .desktop-contact {
+        display: none;
+      }
+
+      .mobile-contact {
+        display: block;
+      }
+
+      .navbar .collapse {
+        border: 0;
+      }
+    }
+
+    @media (min-width: 767px) {
+      .navbar .collapse {
+        border: 0;
+        width: 50%;
+      }
+    }
+
+    .no-scroll {
+      overflow: hidden;
+      height: 100%;
+    }
+
+    .demo-section {
+      height: 150vh;
+      padding-top: 70px;
+      background: linear-gradient(to bottom, #1a1a2e, #16213e);
+      color: white;
+    }
+
+    .navbar-scrolled .nav-link {
+      color: rgba(255, 255, 255, 0.95);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Barre de navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <!-- Marque/Logo -->
+      <a class="navbar-brand" href="#home">
+        <img src="img/icon/logo.png" alt="logo" style="height:40px;width:auto;">
+      </a>
+
+      <!-- Bouton Contact pour mobile (à côté du toggler) -->
+      <div class="d-lg-none mobile-contact">
+        <a href="#contact" class="contact-btn">Contact</a>
+      </div>
+
+      <!-- Bouton toggler pour mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Contenu du navbar (sera transformé en panneau mobile) -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#home">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">À propos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#service">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#portfolio">Réalisations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#testimonials">Témoignages</a>
+          </li>
+        </ul>
+
+        <!-- Bouton Contact pour desktop -->
+        <div class="d-none d-lg-block desktop-contact">
+          <a href="#contact" class="contact-btn">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenu de démonstration pour permettre le défilement -->
+  <div class="demo-section">
+    <div class="container">
+      <h1 class="mt-5">Contenu de démonstration</h1>
+      <p>Faites défiler pour voir la barre de navigation changer de couleur.</p>
+      <p>Sur mobile, le panneau de navigation glisse depuis la gauche avec fond noir.</p>
+      <p>Sur desktop, les liens de navigation sont centrés et le bouton Contact est à droite.</p>
+      <!-- Sections exemples (assure-toi que tes vraies sections existent avec les mêmes id) -->
+      <section id="home" style="margin-top:50px; padding:40px 0;">Home section</section>
+      <section id="about" style="margin-top:120px; padding:40px 0;">About section</section>
+      <section id="service" style="margin-top:120px; padding:40px 0;">Service section</section>
+      <section id="portfolio" style="margin-top:120px; padding:40px 0;">Portfolio section</section>
+      <section id="testimonials" style="margin-top:120px; padding:40px 0;">Testimonials section</section>
+      <section id="contact" style="margin-top:120px; padding:40px 0;">Contact section</section>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // navbar color on scroll
+    window.addEventListener('scroll', function () {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) navbar.classList.add('navbar-scrolled');
+      else navbar.classList.remove('navbar-scrolled');
+    });
+
+    // block scroll when mobile menu open & close on link click
+    (function () {
+      const collapseEl = document.getElementById('navbarNav');
+      if (!collapseEl) return;
+
+      collapseEl.addEventListener('show.bs.collapse', function () {
+        document.body.classList.add('no-scroll');
+      });
+
+      collapseEl.addEventListener('hidden.bs.collapse', function () {
+        document.body.classList.remove('no-scroll');
+      });
+
+      // Target: any link inside navbar that points to an anchor (href="#...")
+      const allNavbarAnchors = document.querySelectorAll('.navbar a[href^="#"]');
+
+      allNavbarAnchors.forEach(link => {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          const id = this.getAttribute('href').slice(1);
+          if (!id) return;
+          const target = document.getElementById(id);
+          if (!target) return;
+
+          // hauteur du navbar dynamique
+          const navbar = document.querySelector('.navbar');
+          const navbarHeight = navbar ? navbar.offsetHeight : 56;
+
+          // calculer position (juste en dessous du navbar)
+          const offsetTop = target.getBoundingClientRect().top + window.scrollY - navbarHeight - 8;
+
+          window.scrollTo({
+            top: Math.max(0, offsetTop),
+            behavior: 'smooth'
+          });
+
+          // fermer menu mobile si ouvert (Bootstrap)
+          if (collapseEl.classList.contains('show')) {
+            const bs = bootstrap.Collapse.getInstance(collapseEl) || new bootstrap.Collapse(collapseEl, { toggle: false });
+            bs.hide();
+          }
+
+          // mise à jour visuelle du lien actif
+          document.querySelectorAll('.navbar-nav .nav-link').forEach(n => n.classList.remove('active'));
+          // si c'est un .nav-link, on lui met active
+          if (this.classList.contains('nav-link')) this.classList.add('active');
+          else {
+            // si bouton contact (pas nav-link), on peut activer manuellement le lien correspondant
+            const related = document.querySelector('.navbar-nav .nav-link[href="#' + id + '"]');
+            if (related) related.classList.add('active');
+          }
+
+          // remplacer l'URL affichée par /id (ex: /about)
+          const newPath = '/' + id;
+          history.replaceState({}, '', newPath);
+        });
+      });
+    })();
+  </script>
+</body>
+
+</html>

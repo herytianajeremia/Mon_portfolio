@@ -33,62 +33,56 @@
 
 <body>
   <div id="particles-js" aria-hidden="true"></div>
-  <!-- navbar -->
-  <header class="header fixed-top">
+  <!-- Navbar Start-->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
-      <nav class="navbar navbar-expand-lg">
-        <!-- Logo pour mobile -->
-        <a class="navbar-brand d-lg-none mobile-logo" href="#home">
-          <img src="img/icon/logo.png" alt="Logo Jermia" class="logo-img" data-default="img/icon/logo.png"
-            data-scrolled="img/icon/logo-mobile-dark.png" style="height:40px;width:auto;">
-        </a>
+      <!-- Marque/Logo -->
+      <a class="navbar-brand" href="#home">
+        <img src="img/icon/logo.png" alt="logo" style="height:40px;width:auto;">
+      </a>
 
-        <!-- Logo pour desktop -->
-        <a class="navbar-brand d-none d-lg-block mx-4 desktop-logo" href="#home">
-          <img src="img/icon/logo.png" alt="Logo Jermia" class="logo-img" data-default="img/icon/logo.png"
-            data-scrolled="img/icon/logo-desktop-dark.png" style="height:50px;width:auto;">
-        </a>
+      <!-- Bouton Contact pour mobile (à côté du toggler) -->
+      <div class="d-lg-none mobile-contact">
+        <a href="#contact" class="contact-btn">Contact</a>
+      </div>
 
-        <!-- Bouton Contact mobile + Toggler -->
-        <div class="d-flex d-lg-none align-items-center">
-          <a href="#contact" class="btn btn-outline-light btn-contact-mobile me-2">Contact</a>
-          <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarNav" aria-expanded="false" aria-label="Menu mobile">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+      <!-- Bouton toggler pour mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Contenu du navbar (sera transformé en panneau mobile) -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#home">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">À propos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#service">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#portfolio">Réalisations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#testimonials">Témoignages</a>
+          </li>
+        </ul>
+
+        <!-- Bouton Contact pour desktop -->
+        <div class="d-none d-lg-block desktop-contact">
+          <a href="#contact" class="contact-btn">Contact</a>
         </div>
-
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav mx-auto me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="#home">Accueil</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">À propos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#service">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#portfolio">Réalisations</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#testimonials">Témoignages</a>
-            </li>
-          </ul>
-
-          <!-- Bouton Contact desktop -->
-          <ul class="navbar-nav ms-end mb-2 mb-lg-0 d-none d-lg-flex">
-            <li class="nav-item">
-              <a href="#contact" class="btn btn-outline-light">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      </div>
     </div>
-  </header>
-
-  <!-- header -->
+  </nav>
+  <!--End Navbar -->
+  <!-- === Main === -->
   <main class="container">
     <!-- section start -->
     <section class="hero-section" id="home">
@@ -325,7 +319,7 @@
         <div class="row justify-content-center">
           <div class="col-lg-8">
             <div class="section-title text-center">
-              <h2 class="fw-bold text-light Title-underline mb-5">Ce que je fais</h2>
+              <h2 class="fw-bold text-light Title-underline mb-5">Services</h2>
             </div>
           </div>
         </div>
@@ -703,9 +697,7 @@
     </section>
     <!-- contact section End -->
   </main>
-
-  <!-- Bouton Scroll to Top -->
-
+  <!-- ===End Main === -->
   <!-- footer start -->
   <footer class="footer border-4 p-5">
     <div class="container-fluid">

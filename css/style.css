@@ -481,7 +481,13 @@ h6 {
 .profile-circle:hover img {
   transform: scale(1.1);
 }
+.rotating-group:hover {
+    animation-play-state: paused !important;
+}
 
+.social:hover {
+    animation-play-state: paused;
+}
 /* === ROTATING CIRCLE === */
 .rotating-group {
   position: absolute;
@@ -2086,6 +2092,14 @@ a.social-1 {
   .navbar .collapse {
     width: 75%;
   }
+  
+.rotating-group:hover {
+    animation-play-state: paused !important;
+}
+
+.social:hover {
+    animation-play-state: paused;
+}
   .hero-title {
     font-size: 2rem !important;
   }

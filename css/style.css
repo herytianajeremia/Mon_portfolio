@@ -23,7 +23,7 @@
   --radius: 18px;
   --navbar-height: 56px;
   --nav-underline-width: 80%;
-  --navbar-border-color: rgba(255, 255, 255, 0.08); 
+  --navbar-border-color: rgba(255, 255, 255, 0.08);
   --navbar-border-scrolled: rgba(
     255,
     255,
@@ -482,11 +482,11 @@ h6 {
   transform: scale(1.1);
 }
 .rotating-group:hover {
-    animation-play-state: paused !important;
+  animation-play-state: paused !important;
 }
 
 .social:hover {
-    animation-play-state: paused;
+  animation-play-state: paused;
 }
 /* === ROTATING CIRCLE === */
 .rotating-group {
@@ -2092,14 +2092,14 @@ a.social-1 {
   .navbar .collapse {
     width: 75%;
   }
-  
-.rotating-group:hover {
-    animation-play-state: paused !important;
-}
 
-.social:hover {
+  .rotating-group:hover {
+    animation-play-state: paused !important;
+  }
+
+  .social:hover {
     animation-play-state: paused;
-}
+  }
   .hero-title {
     font-size: 2rem !important;
   }

@@ -85,7 +85,7 @@
   <!-- === Main === -->
   <main class="container">
     <!-- section start -->
-    <section class="hero-section" id="home">
+    <section class="hero-section autoSection" id="home" data-aos="fade-up" data-aos-duration="1000">
       <div class="row w-100 align-items-center">
 
         <!-- Texte gauche -->
@@ -172,17 +172,18 @@
     </section>
     <!-- section end -->
     <!-- section about -->
-    <section class="about-section" id="about">
+    <section class="about-section" id="about" data-aos="fade-up" data-aos-duration="1000">
       <div class="about-left">
         <!-- LEFT: Présentation -->
-        <div class="title-wrap reveal" id="titleWrap">
+        <div class="title-wrap reveal" id="titleWrap" data-aos="fade-right" data-aos-delay="150">
           <h1 class="title">À propos de moi</h1>
           <div class="subtitle">Designer & intégrateur web — UI/UX & front-end. Je crée des interfaces
             propres, modernes et axées conversion.
           </div>
         </div>
 
-        <div class="profile-card mt-4 reveal" id="profileCard">
+        <div class="profile-card mt-4 reveal" id="profileCard" id="profileCard" data-aos="fade-right"
+          data-aos-delay="200">
           <div class="profile-top">
             <div class="avatar" aria-hidden="true">
               <!-- Remplacez src par votre photo -->
@@ -199,15 +200,15 @@
               </div>
 
               <div class="stats">
-                <div class="stat">
+                <div class="stat" data-aos="zoom-in" data-aos-delay="300">
                   <div class="num" data-target="100">0</div>
                   <small>Projets</small>
                 </div>
-                <div class="stat">
+                <div class="stat" data-aos="zoom-in" data-aos-delay="400">
                   <div class="num" data-target="90">0</div>
                   <small>Clients</small>
                 </div>
-                <div class="stat">
+                <div class="stat" data-aos="zoom-in" data-aos-delay="500">
                   <div class="num" data-target="95">0</div>
                   <small>Avis positifs</small>
                 </div>
@@ -233,7 +234,7 @@
       </div>
 
       <!-- RIGHT: Compétences -->
-      <aside class="skills-column reveal" id="skillsCol">
+      <aside class="skills-column reveal" id="skillsCol" data-aos="fade-left" data-aos-delay="250">
         <div class="skill-card">
           <div class="skill-title">
             <div>
@@ -242,7 +243,7 @@
             <div class="muted" style="font-size:12px">Dernière mise à jour • Sep 2025</div>
           </div>
 
-          <div class="skill-list">
+          <div class="skill-list" data-aos="fade-up" data-aos-delay="350">
             <div>
               <div class="d-flex justify-content-between mb-2"><span>HTML / CSS</span><strong>90%</strong>
               </div>
@@ -301,7 +302,7 @@
         </div>
 
         <!-- Card additionnel : services ou CTA -->
-        <div class="skill-card mt-4">
+        <div class="skill-card mt-4" data-aos="zoom-in" data-aos-delay="400">
           <div class="d-flex justify-content-between align-items-center">
             <div>
               <strong>Services</strong>
@@ -314,17 +315,17 @@
       </aside>
     </section>
     <!-- section about -->
-    <section class="service" id="service">
+    <section class="service" id="service" data-aos="fade-up" data-aos-duration="1000">
       <div class="container-lg py-4">
         <div class="row justify-content-center">
-          <div class="col-lg-8">
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="150">
             <div class="section-title text-center">
               <h2 class="fw-bold text-light Title-underline mb-5">Services</h2>
             </div>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-6 col-lg-4 mb-4">
+          <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="200">
             <div class="service-item shadow-sm">
               <div class="icon fs-2">
                 <i class="fas fa-code"></i>
@@ -336,7 +337,7 @@
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-4 mb-4">
+          <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="300">
             <div class="service-item shadow-sm">
               <div class="icon fs-2">
                 <i class="fas fa-palette"></i>
@@ -349,7 +350,7 @@
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-4 mb-4">
+          <div class="col-md-6 col-lg-4 mb-4" data-aos="zoom-in" data-aos-delay="400">
             <div class="service-item shadow-sm">
               <div class="icon fs-2">
                 <i class="fab fa-figma"></i>
@@ -365,24 +366,24 @@
     </section>
 
     <!-- portfolio -->
-    <section class="portfolio mt-4 p-2" id="portfolio">
+    <section class="portfolio mt-4 p-2" id="portfolio" data-aos="fade-up" data-aos-duration="1000">
       <div class="container">
         <!-- <h2 class="section-title">Réalisations</h2> -->
         <div class="row justify-content-center">
-          <div class="col-lg-8">
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="150">
             <div class="section-title text-center">
               <h2 class=" fw-bold text-light Title-underline ">Réalisations</h2>
             </div>
           </div>
         </div>
         <!-- Filtre : Marketing retiré -->
-        <ul class="portfolio-flters mt-3">
+        <ul class="portfolio-flters mt-3" data-aos="fade-up" data-aos-delay="200">
           <li data-filter="*" class="filter-active">Tous</li>
           <li data-filter=".filter-app">Design</li>
           <li data-filter=".filter-product">Développement</li>
         </ul>
 
-        <div class="portfolio-auto-container">
+        <div class="portfolio-auto-container" data-aos="fade-up" data-aos-delay="250">
           <div class="auto-scroll-wrapper" id="auto-scroll-wrapper"></div>
         </div>
       </div>
@@ -401,7 +402,8 @@
               </a>
             </div>
             <div class="overlay">
-              <div class="meta"><span class="title"></span><button class="btn view-btn" type="button">Voir</button>
+              <div class="meta"><span class="title"></span><button class="btn view-btn" type="button"><i
+                    class="fa fa-eye"></i></button>
               </div>
             </div>
           </div>
@@ -435,10 +437,10 @@
     <!-- portfolio -->
 
     <!-- Freelance  section start -->
-    <section class="freelance mt-3 py-5" id="freelance">
+    <section class="freelance mt-3 py-5" id="freelance" data-aos="fade-up" data-aos-duration="1000">
       <div class="container-lg py-4">
         <div class="row justify-content-center">
-          <div class="col-lg-8 text-center">
+          <div class="col-lg-8 text-center" data-aos="zoom-in" data-aos-delay="200">
             <p class="text-light fs-5">Avez-vous un projet?</p>
             <h2 class="fs-1 text-white mb-4">Je suis disponible pour un projet en freelance</h2>
             <a href="#contact" class="btn btn-neon">Engagez-moi</a>
@@ -449,23 +451,23 @@
     <!-- Freelance  section end -->
 
     <!-- Testimonials section start -->
-    <section class="testimonials-section py-5" id="testimonials">
+    <section class="testimonials-section py-5" id="testimonials" data-aos="fade-up" data-aos-duration="1000">
       <!-- Fond avec effet moderne -->
       <div class="container-lg py-4 position-relative">
         <div class="row justify-content-center mb-5">
-          <div class="col-lg-8">
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="150">
             <div class="section-title text-center">
               <h2 class="fw-bold text-white Title-underline mb-3">Témoignages</h2>
             </div>
           </div>
         </div>
 
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="200">
           <div class="col-lg-12">
             <div class="testimonials-scroll-container">
               <div class="testimonials-track">
                 <!-- Témoignage 2 - Heritiana Jeremia -->
-                <div class="testimonial-card">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="250">
                   <div class="testimonial-header">
                     <div class="author-info-main">
                       <div class="author-image">
@@ -496,7 +498,7 @@
                 </div>
 
                 <!-- Témoignage 2 dupliqué -->
-                <div class="testimonial-card">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
                   <div class="testimonial-header">
                     <div class="author-info-main">
                       <div class="author-image">
@@ -527,7 +529,7 @@
                 </div>
                 <!-- Duplication pour effet infini -->
                 <!-- Témoignage 1 dupliqué -->
-                <div class="testimonial-card">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="250">
                   <div class="testimonial-header">
                     <div class="author-info-main">
                       <div class="author-image">
@@ -557,7 +559,7 @@
                   </div>
                 </div>
                 <!-- Témoignage 2 dupliqué -->
-                <div class="testimonial-card">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
                   <div class="testimonial-header">
                     <div class="author-info-main">
                       <div class="author-image">
@@ -594,11 +596,11 @@
     </section>
     <!-- Testimonials section start -->
     <!-- contact section -->
-    <section class="contact-section py-5" id="contact">
+    <section class="contact-section py-5" id="contact" data-aos="fade-up" data-aos-duration="1000">
       <!-- Fond avec dégradé moderne -->
       <div class="container-lg py-4 position-relative">
         <div class="row justify-content-center mb-5">
-          <div class="col-lg-6">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
             <div class="section-title text-center">
               <h2 class="fw-bold text-white Title-underline mb-3">Contactez-moi</h2>
             </div>
@@ -607,7 +609,7 @@
 
         <div class="row g-4">
           <!-- Informations de contact -->
-          <div class="col-md-5">
+          <div class="col-md-5" data-aos="fade-right" data-aos-delay="200">
             <div class="contact-card p-4 rounded-4 mb-4">
               <div class="contact-item d-flex align-items-center mb-4">
                 <div class="icon-container d-flex align-items-center justify-content-center rounded-circle">
@@ -642,73 +644,72 @@
           </div>
 
           <!-- Formulaire de contact -->
-          <div class="col-md-7">
+          <div class="col-md-7" data-aos="fade-left" data-aos-delay="250">
             <div class="contact-form p-4 rounded-4">
               <form id="contactForm">
                 <div class="row g-4">
-                  <div class="col-lg-6">
+                  <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="form-floating">
                       <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
                       <label for="name">Name</label>
                     </div>
                   </div>
 
-                  <div class="col-lg-6">
+                  <div class="col-lg-6" data-aos="fade-up" data-aos-delay="350">
                     <div class="form-floating">
                       <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
                       <label for="email">Email</label>
                     </div>
                   </div>
 
-                  <div class="col-12">
+                  <div class="col-12" data-aos="fade-up" data-aos-delay="400">
                     <div class="form-floating">
                       <input type="text" class="form-control" id="subject" name="subject" placeholder="Object">
                       <label for="subject">Object</label>
                     </div>
                   </div>
 
-                  <div class="col-12">
-                    <div class="form-floating">
-                      <textarea class="form-control" id="message" name="message" placeholder="Message"
-                        style="height: 150px" required></textarea>
-                      <label for="message">Message</label>
-                    </div>
-                  </div>
-
-                  <div class="col-12 text-end">
-                    <button onclick="sendMail();" type="button" id="submitBtn" class="btn btn-primary p-2 rounded">
-                      <span class="button-content">
-                        <i class="fas fa-paper-plane me-2"></i>Send Message
-                      </span>
-                      <span class="spinner-border spinner-border-sm d-none" role="status" id="spinner"></span>
-                    </button>
-                  </div>
-
-                  <div class="col-12 text-center mt-3">
-                    <p id="statusMessage" class="d-none"></p>
+                  <div class="col-12" data-aos="fade-up" data-aos-delay="450">
+                    <textarea class="form-control" id="message" name="message" placeholder="Message"
+                      style="height: 150px" required></textarea>
+                    <label for="message">Message</label>
                   </div>
                 </div>
-              </form>
 
+                <div class="col-12 text-end" data-aos="fade-up" data-aos-delay="500">
+                  <button onclick="sendMail();" type="button" id="submitBtn" class="btn btn-primary p-2 rounded">
+                    <span class="button-content">
+                      <i class="fas fa-paper-plane me-2"></i>Send Message
+                    </span>
+                    <span class="spinner-border spinner-border-sm d-none" role="status" id="spinner"></span>
+                  </button>
+                </div>
+
+                <div class="col-12 text-center mt-3">
+                  <p id="statusMessage" class="d-none"></p>
+                </div>
             </div>
+            </form>
+
           </div>
         </div>
+      </div>
       </div>
     </section>
     <!-- contact section End -->
   </main>
   <!-- ===End Main === -->
   <!-- footer start -->
-  <footer class="footer border-4 p-5">
+  <footer class="footer border-4 p-5" data-aos="fade-up" data-aos-duration="1000">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-6" data-aos="fade-right" data-aos-delay="150">
           <div class="text-start">
             <p class="m-0 text-light ">&copyright.Décembre 2024 </p>
             <a href="#" class="fw-bold text-light text-decoration-none">ANDRIANANDRASANA Heritiana Jeremia</a>
           </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
           <div class="text-end">
             <div class="rounded-social-buttons">
               <a class="social-button facebook" href="https://www.facebook.com/jeremy.camp.712" target="_blank"><i

@@ -37,6 +37,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   height: 100%;
@@ -49,14 +53,6 @@ body {
   z-index: 1000;
   padding: 0;
   /* overflow-x: hidden; */
-}
-#particles-js {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  opacity: 0.75;
-  mix-blend-mode: screen;
-  pointer-events: none;
 }
 
 .container,
@@ -84,10 +80,21 @@ h6 {
 .Title-underline::after {
   content: "";
   display: block;
-  width: 100px;
-  height: 3px;
+  width: 40px;
+  height: 4px;
   background-color: var(--text-danger);
-  margin: 8px auto 0;
+  margin: 12px auto 0;
+  border-radius: 4px;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1),
+    inset 0 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.Title-underline:hover::after {
+  width: 70px;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15),
+    inset 0 1px 2px rgba(255, 255, 255, 0.4);
 }
 /*=======header Navbar========  */
 .navbar.fixed-top {
@@ -111,7 +118,7 @@ h6 {
   ) !important; /* bordure un peu plus visible après scroll */
 }
 
-/* Toggler styling (hamburger -> croix) */
+/* (hamburger -> croix) */
 .navbar-toggler {
   border: none;
   padding: 0;
@@ -178,7 +185,7 @@ h6 {
 .navbar-nav .nav-link {
   font-weight: 500;
   margin: 0 8px;
-  position: relative; /* IMPORTANT: pour ::after */
+  position: relative;
   color: rgba(255, 255, 255, 0.9);
 }
 .nav-link::after {
@@ -1859,6 +1866,43 @@ a.social-1 {
   background: #fefefe;
   border-color: #886812;
 }
+
+/* ==== section-animate === */
+#particles-js {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.75;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+[data-aos] {
+  pointer-events: none;
+}
+[data-aos].aos-animate {
+  pointer-events: auto;
+}
+
+main.container,
+nav.navbar,
+footer.footer {
+  position: relative;
+  z-index: 10;
+}
+
+
+.hero-section,
+.about-section,
+.service,
+.portfolio,
+.freelance,
+.testimonials-section,
+.contact-section {
+  position: relative;
+  z-index: 1;
+}
+/* ==== End section-animmate ==== */
 /* =======Footer========= */
 .footer {
   background: linear-gradient(
@@ -2086,8 +2130,6 @@ a.social-1 {
     margin-top: 1rem;
   }
 }
-
-/* Correction pour les très petits écrans */
 @media (max-width: 480px) {
   .navbar .collapse {
     width: 75%;

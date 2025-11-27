@@ -208,8 +208,7 @@ function createPortfolioLayout() {
   container.innerHTML = '';
 
   // Filtrer les éléments
-  const filteredItems = portfolioState.currentFilter === '*' ?
-    [...portfolioState.allItems] :
+  const filteredItems = portfolioState.currentFilter === '*' ? [...portfolioState.allItems] :
     portfolioState.allItems.filter(item => item.category === portfolioState.currentFilter.replace('.', ''));
 
   console.log(`📁 Éléments filtrés: ${filteredItems.length} projets`);
@@ -793,107 +792,116 @@ function sendMail() {
 }
 
 // Particules
-document.addEventListener('DOMContentLoaded', () => {
-  const colors = ['#8be9fd', '#b388ff', '#7ee787', '#ffd28b'];
+ // Initialiser AOS
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false,
+        offset: 100
+      });
 
-  function getParticleCount() {
-    const area = window.innerWidth * window.innerHeight;
-    const base = Math.round(area / 22000);
-    const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent) ||
-      Math.max(window.innerWidth, window.innerHeight) < 600;
-    const count = isMobile ? Math.round(base * 0.5) : base;
-    return Math.max(20, Math.min(120, count));
-  }
+      // VOTRE CODE PARTICLES.JS ORIGINAL
+      const colors = ['#8be9fd', '#b388ff', '#7ee787', '#ffd28b'];
 
-  function destroyParticles() {
-    if (window.pJSDom && window.pJSDom.length) {
-      try {
-        window.pJSDom.forEach(inst => inst && inst.pJS && inst.pJS.fn.vendors.destroypJS());
-      } catch (e) {
-        /* silent */
+      function getParticleCount() {
+        const area = window.innerWidth * window.innerHeight;
+        const base = Math.round(area / 22000);
+        const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent) ||
+          Math.max(window.innerWidth, window.innerHeight) < 600;
+        const count = isMobile ? Math.round(base * 0.5) : base;
+        return Math.max(20, Math.min(120, count));
       }
-      window.pJSDom = [];
-    }
-  }
 
-  function initParticles() {
-    destroyParticles();
-    if (!document.getElementById('particles-js') || typeof particlesJS !== 'function') return;
+      function destroyParticles() {
+        if (window.pJSDom && window.pJSDom.length) {
+          try {
+            window.pJSDom.forEach(inst => inst && inst.pJS && inst.pJS.fn.vendors.destroypJS());
+          } catch (e) {
+            /* silent */
+          }
+          window.pJSDom = [];
+        }
+      }
 
-    particlesJS('particles-js', {
-      particles: {
-        number: {
-          value: getParticleCount(),
-          density: {
-            enable: false
-          }
-        },
-        color: {
-          value: colors
-        },
-        shape: {
-          type: 'circle'
-        },
-        opacity: {
-          value: 0.7,
-          anim: {
-            enable: true,
-            speed: 0.6,
-            opacity_min: 0.15
-          }
-        },
-        size: {
-          value: 3,
-          random: true,
-          anim: {
-            enable: true,
-            speed: 2
-          }
-        },
-        line_linked: {
-          enable: true,
-          distance: 120,
-          opacity: 0.06,
-          width: 1
-        },
-        move: {
-          enable: true,
-          speed: 1.6,
-          out_mode: 'out'
-        }
-      },
-      interactivity: {
-        detect_on: 'canvas',
-        events: {
-          onhover: {
-            enable: false
+      function initParticles() {
+        destroyParticles();
+        if (!document.getElementById('particles-js') || typeof particlesJS !== 'function') return;
+
+        particlesJS('particles-js', {
+          particles: {
+            number: {
+              value: getParticleCount(),
+              density: {
+                enable: false
+              }
+            },
+            color: {
+              value: colors
+            },
+            shape: {
+              type: 'circle'
+            },
+            opacity: {
+              value: 0.7,
+              anim: {
+                enable: true,
+                speed: 0.6,
+                opacity_min: 0.15
+              }
+            },
+            size: {
+              value: 3,
+              random: true,
+              anim: {
+                enable: true,
+                speed: 2
+              }
+            },
+            line_linked: {
+              enable: true,
+              distance: 120,
+              opacity: 0.06,
+              width: 1
+            },
+            move: {
+              enable: true,
+              speed: 1.6,
+              out_mode: 'out'
+            }
           },
-          onclick: {
-            enable: false
+          interactivity: {
+            detect_on: 'canvas',
+            events: {
+              onhover: {
+                enable: false
+              },
+              onclick: {
+                enable: false
+              },
+              resize: true
+            },
+            modes: {
+              repulse: {
+                distance: 90
+              },
+              push: {
+                particles_nb: 4
+              }
+            }
           },
-          resize: true
-        },
-        modes: {
-          repulse: {
-            distance: 90
-          },
-          push: {
-            particles_nb: 4
-          }
-        }
-      },
-      retina_detect: true
+          retina_detect: true
+        });
+      }
+
+      initParticles();
+      let resizeTimer;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(initParticles, 200);
+      });
     });
-  }
-
-  initParticles();
-  let resizeTimer;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(initParticles, 200);
-  });
-});
-
 
 // Isotope (si vous l'utilisez ailleurs)
 $(document).ready(function () {
@@ -924,3 +932,5 @@ $(document).ready(function () {
     });
   }
 });
+// ===animate scroll===
+

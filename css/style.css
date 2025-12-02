@@ -1746,7 +1746,7 @@ a.social-1 {
 .success {
   font-family: "Poppins", sans-serif;
   font-size: 0.7em !important;
-  color: var(--primary);
+  color: var(--accent-a)!important;
   font-style: italic;
 }
 
@@ -1776,6 +1776,8 @@ a.social-1 {
   box-shadow: none;
   cursor: not-allowed;
 }
+/* ===== End contact ===== */
+
 /* ================ Social-icons================ */
 /* Footer social icon */
 .rounded-social-buttons .social-button {

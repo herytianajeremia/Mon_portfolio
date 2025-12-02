@@ -59,7 +59,7 @@ const portfolioData = [{
     category: "filter-app",
     image: "img/img-projet/group-3.png",
     title: "Design Project 4",
-    link: "https://www.figma.com/design/saeth76IYou0L4ZYE8FnEZ/Untitled?node-id=0-1&t=O9lRfsrSpegnp6Sg-0"
+    link: "https://www.figma.com/design/o22G1ASKKXczqIl55hWjaq/Untitled?node-id=0-1&p=f"
   },
   {
     category: "filter-app",

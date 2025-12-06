@@ -469,7 +469,7 @@ h6 {
   border-radius: 50%;
   overflow: hidden;
   z-index: 10;
-  border: 4px solid rgba(100, 255, 218, 0.35);
+  border: 2px solid var(--primary);
   box-shadow: 0 10px 30px rgba(2, 6, 23, 0.65);
   background: #081327;
   animation: glow-pulse 3s ease-in-out infinite;
@@ -522,7 +522,7 @@ h6 {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  border: 3px dashed rgba(100, 255, 218, 0.6);
+  border: 3px dotted var(--primary);
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04) inset;
 }
 
@@ -1746,7 +1746,7 @@ a.social-1 {
 .success {
   font-family: "Poppins", sans-serif;
   font-size: 0.7em !important;
-  color: var(--primary);
+  color: var(--accent-a)!important;
   font-style: italic;
 }
 
@@ -1776,10 +1776,14 @@ a.social-1 {
   box-shadow: none;
   cursor: not-allowed;
 }
+/* ===== End contact ===== */
+
 /* ================ Social-icons================ */
 /* Footer social icon */
 .rounded-social-buttons .social-button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   cursor: pointer;
   width: 3.125rem;
@@ -1798,26 +1802,32 @@ a.social-1 {
   margin-bottom: 0.25rem;
 }
 
-.rounded-social-buttons .social-button:hover,
+.rounded-social-buttons .social-button:hover, 
 .rounded-social-buttons .social-button:focus {
   -webkit-transform: rotate(360deg);
-  -ms-transform: rotate(360deg);
-  transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
 }
 
-.rounded-social-buttons .fa-twitter,
-.fa-facebook-f,
-.fa-linkedin,
-.fa-youtube,
-.fa-instagram {
-  font-size: 25px;
+
+.rounded-social-buttons .social-button:hover i, 
+.rounded-social-buttons .social-button:focus i {
+  -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+
+.rounded-social-buttons .social-button i {
+  font-size: 1.5625rem; 
+  transition: transform 0.5s ease; 
 }
 
 .rounded-social-buttons .social-button.facebook {
   background: #3b5998;
 }
 
-.rounded-social-buttons .social-button.facebook:hover,
+.rounded-social-buttons .social-button.facebook:hover, 
 .rounded-social-buttons .social-button.facebook:focus {
   color: #3b5998;
   background: #fefefe;
@@ -1828,10 +1838,10 @@ a.social-1 {
   background: #55acee;
 }
 
-.rounded-social-buttons .social-button.twitter:hover,
+.rounded-social-buttons .social-button.twitter:hover, 
 .rounded-social-buttons .social-button.twitter:focus {
   color: #55acee;
-  background: #f5f5f5;
+  background: #fefefe;
   border-color: #55acee;
 }
 
@@ -1839,34 +1849,28 @@ a.social-1 {
   background: #007bb5;
 }
 
-.rounded-social-buttons .social-button.linkedin:hover,
+.rounded-social-buttons .social-button.linkedin:hover, 
 .rounded-social-buttons .social-button.linkedin:focus {
   color: #007bb5;
   background: #fefefe;
   border-color: #007bb5;
 }
 
-.rounded-social-buttons .social-button.youtube {
-  background: #bb0000;
-}
-
-.rounded-social-buttons .social-button.youtube:hover,
-.rounded-social-buttons .social-button.youtube:focus {
-  color: #bb0000;
-  background: #fefefe;
-  border-color: #bb0000;
-}
-
 .rounded-social-buttons .social-button.instagram {
   background: #125688;
 }
 
-.rounded-social-buttons .social-button.instagram:hover,
+.rounded-social-buttons .social-button.instagram:hover, 
 .rounded-social-buttons .social-button.instagram:focus {
-  color: #881222;
+  color: #e4405f;
   background: #fefefe;
-  border-color: #886812;
+  border-color: #e4405f;
 }
+
+.rounded-social-buttons .social-button {
+  cursor: pointer!important;
+}
+/* End Footer social incons */
 
 /* ==== section-animate === */
 #particles-js {
@@ -1911,6 +1915,7 @@ footer.footer {
     rgba(10, 25, 47, 0.98) 0%,
     rgba(19, 34, 57, 0.95) 100%
   );
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   border-top: 1px solid var(--primary);
   box-shadow: 0 -4px 24px rgba(10, 25, 47, 0.4);

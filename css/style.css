@@ -102,6 +102,7 @@ h6 {
   z-index: 1100;
   border-bottom: var(--navbar-border-size) solid var(--navbar-border-color); /* fine bordure en bas */
   transition: border-color 0.25s ease, background-color 0.25s ease;
+  -webkit-backdrop-filter: none;
   backdrop-filter: none;
 }
 
@@ -665,6 +666,7 @@ h6 {
   display: flex;
   flex-direction: column;
   background: rgba(255, 255, 255, 0.03);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-radius: 16px;
   padding: 2rem;
@@ -873,6 +875,7 @@ h1.title {
   position: relative;
   overflow: hidden;
   box-shadow: 0 8px 30px rgba(2, 6, 23, 0.6);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
   backdrop-filter: blur(8px) saturate(120%);
 }
 
@@ -1184,6 +1187,7 @@ a.social-1 {
   overflow: hidden;
   background: var(--card);
   position: relative;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   padding: 20px;
   height: 220px;
@@ -1694,6 +1698,7 @@ a.social-1 {
 .contact-card,
 .contact-form {
   background-color: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
@@ -1746,7 +1751,7 @@ a.social-1 {
 .success {
   font-family: "Poppins", sans-serif;
   font-size: 0.7em !important;
-  color: var(--accent-a)!important;
+  color: var(--accent-a) !important;
   font-style: italic;
 }
 
@@ -1780,6 +1785,14 @@ a.social-1 {
 
 /* ================ Social-icons================ */
 /* Footer social icon */
+/* Conteneur principal */
+.rounded-social-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+/* Boutons sociaux */
 .rounded-social-buttons .social-button {
   display: inline-flex;
   align-items: center;
@@ -1800,34 +1813,42 @@ a.social-1 {
   transition: all 0.5s ease;
   margin-right: 0.25rem;
   margin-bottom: 0.25rem;
+  z-index: 10; 
+  pointer-events: auto; 
 }
-
-.rounded-social-buttons .social-button:hover, 
-.rounded-social-buttons .social-button:focus {
-  -webkit-transform: rotate(360deg);
-      -ms-transform: rotate(360deg);
-          transform: rotate(360deg);
-}
-
-
-.rounded-social-buttons .social-button:hover i, 
-.rounded-social-buttons .social-button:focus i {
-  -webkit-transform: rotate(360deg);
-      -ms-transform: rotate(360deg);
-          transform: rotate(360deg);
-}
-
 
 .rounded-social-buttons .social-button i {
-  font-size: 1.5625rem; 
-  transition: transform 0.5s ease; 
+  font-size: 1.5625rem;
+  transition: transform 0.5s ease;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+
+.rounded-social-buttons .social-button:hover,
+.rounded-social-buttons .social-button:focus {
+  -webkit-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
+  outline: none; 
+}
+
+.rounded-social-buttons .social-button:hover i,
+.rounded-social-buttons .social-button:focus i {
+  -webkit-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
 
 .rounded-social-buttons .social-button.facebook {
   background: #3b5998;
 }
 
-.rounded-social-buttons .social-button.facebook:hover, 
+.rounded-social-buttons .social-button.facebook:hover,
 .rounded-social-buttons .social-button.facebook:focus {
   color: #3b5998;
   background: #fefefe;
@@ -1838,7 +1859,7 @@ a.social-1 {
   background: #55acee;
 }
 
-.rounded-social-buttons .social-button.twitter:hover, 
+.rounded-social-buttons .social-button.twitter:hover,
 .rounded-social-buttons .social-button.twitter:focus {
   color: #55acee;
   background: #fefefe;
@@ -1849,7 +1870,7 @@ a.social-1 {
   background: #007bb5;
 }
 
-.rounded-social-buttons .social-button.linkedin:hover, 
+.rounded-social-buttons .social-button.linkedin:hover,
 .rounded-social-buttons .social-button.linkedin:focus {
   color: #007bb5;
   background: #fefefe;
@@ -1860,15 +1881,16 @@ a.social-1 {
   background: #125688;
 }
 
-.rounded-social-buttons .social-button.instagram:hover, 
+.rounded-social-buttons .social-button.instagram:hover,
 .rounded-social-buttons .social-button.instagram:focus {
   color: #e4405f;
   background: #fefefe;
   border-color: #e4405f;
 }
 
+
 .rounded-social-buttons .social-button {
-  cursor: pointer!important;
+  cursor: pointer !important;
 }
 /* End Footer social incons */
 
@@ -1896,7 +1918,6 @@ footer.footer {
   z-index: 10;
 }
 
-
 .hero-section,
 .about-section,
 .service,
@@ -1910,11 +1931,17 @@ footer.footer {
 /* ==== End section-animmate ==== */
 /* =======Footer========= */
 .footer {
-  background: linear-gradient(
-    135deg,
-    rgba(10, 25, 47, 0.98) 0%,
-    rgba(19, 34, 57, 0.95) 100%
-  );
+  background: 
+    linear-gradient(
+      135deg,
+      rgba(10, 25, 47, 0.98) 0%,
+      rgba(19, 34, 57, 0.95) 100%
+    ),
+    /* Puzzle connecté */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M0,0 L40,0 C40,0 40,20 60,20 L60,60 C60,60 40,60 40,80 L0,80 Z' fill='rgba(100,255,218,0.06)'/%3E%3Cpath d='M80,0 L120,0 L120,80 L80,80 C80,80 80,60 60,60 L60,20 C60,20 80,20 80,0 Z' fill='rgba(100,255,218,0.06)'/%3E%3Cpath d='M0,120 L40,120 L40,40 L0,40 Z' fill='rgba(100,255,218,0.06)'/%3E%3Cpath d='M80,120 L120,120 L120,40 L80,40 Z' fill='rgba(100,255,218,0.06)'/%3E%3C/svg%3E");
+  
+  background-size: cover, 180px 180px;
+  background-repeat: no-repeat, repeat;
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   border-top: 1px solid var(--primary);
@@ -1930,63 +1957,24 @@ footer.footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background: repeating-linear-gradient(
-    45deg,
-    transparent,
-    transparent 2px,
-    rgba(100, 255, 218, 0.05) 3px,
-    rgba(100, 255, 218, 0.05) 4px
-  );
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 29px,
+      rgba(100, 255, 218, 0.02) 30px,
+      transparent 31px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 29px,
+      rgba(100, 255, 218, 0.02) 30px,
+      transparent 31px
+    );
+  background-size: 60px 60px;
   pointer-events: none;
   z-index: -1;
-}
-
-.footer::after {
-  content: "";
-  position: absolute;
-  bottom: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(
-    circle,
-    rgba(255, 107, 107, 0.08) 0%,
-    transparent 60%
-  );
-  animation: float-footer 20s linear infinite;
-}
-
-@keyframes float-footer {
-  0% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(50%, 50%);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
-}
-
-/* Contenu du footer */
-.footer > .container-lg {
-  position: relative;
-  z-index: 1;
-}
-
-.footer .text-muted {
-  color: var(--accent) !important;
-  opacity: 0.8;
-}
-
-.footer a {
-  color: var(--text-light);
-  transition: all 0.3s ease;
-}
-
-.footer a:hover {
-  color: var(--primary);
-  text-shadow: 0 0 12px rgba(255, 107, 107, 0.3);
 }
 /* scrool-top */
 #toTopBtn {

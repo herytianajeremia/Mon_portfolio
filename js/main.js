@@ -727,8 +727,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // EmailJS
 function sendMail() {
-  emailjs.init("IG7ctBcY-aKV-fJ1n");
-
   const submitBtn = document.getElementById("submitBtn");
   const spinner = document.getElementById("spinner");
   const buttonText = document.querySelector(".button-content");
@@ -741,7 +739,7 @@ function sendMail() {
   const message = document.getElementById("message").value.trim();
 
   // Validation
-  if (!name || !email || !subject || !message) {
+  if (!name || !email || !message) {
     showError("Veuillez remplir tous les champs obligatoires.");
     return;
   }
@@ -751,24 +749,66 @@ function sendMail() {
   spinner.classList.remove("d-none");
   buttonText.style.display = "none";
 
-  const params = {
-    from_name: name,
-    from_email: email,
-    subject: subject,
-    message: message,
-    reply_to: email
-  };
+  // Construire l'URL Gmail avec toutes les informations pré-remplies
+  const recipientEmail = "herytianajeremy45@gmail.com";
+  
+  // Construire le sujet du mail
+  const mailSubject = subject ? `[Contact Portfolio] ${subject}` : `[Contact Portfolio] Message de ${name}`;
+  
+  // Construire le corps du mail formaté pour Gmail
+  const mailBody = `
+Nouveau message de contact depuis votre portfolio
 
-  emailjs.send("service_hrp1ha8", "template_37yph3d", params)
-    .then(() => {
-      showSuccess("Mail envoyé avec succès !");
-      document.getElementById("contactForm").reset();
-    })
-    .catch((error) => {
-      console.error("Erreur d'envoi:", error);
-      showError("Erreur lors de l'envoi du message");
-    })
-    .finally(() => resetButtonState());
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+INFORMATIONS DE L'EXPÉDITEUR
+
+Nom : ${name}
+Email : ${email}
+Objet : ${subject || "Non spécifié"}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+MESSAGE
+
+${message}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Ce message a été envoyé depuis le formulaire de contact de votre portfolio.
+  `.trim();
+
+  // URL pour ouvrir Gmail avec les champs pré-remplis
+  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(recipientEmail)}&su=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
+
+  // Ouvrir Gmail dans une nouvelle fenêtre
+  const windowFeatures = 'width=800,height=600,resizable=yes,scrollbars=yes,status=yes';
+  const gmailWindow = window.open(gmailUrl, '_blank', windowFeatures);
+
+  // Vérifier si la fenêtre a été ouverte
+  if (!gmailWindow || gmailWindow.closed || typeof gmailWindow.closed === 'undefined') {
+    // Si Gmail est bloqué, ouvrir le client mail par défaut
+    const fallbackMailto = `mailto:${recipientEmail}?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
+    window.location.href = fallbackMailto;
+    showSuccess("Ouverture de votre client de messagerie...");
+  } else {
+    showSuccess("Gmail ouvert dans une nouvelle fenêtre !");
+  }
+  
+  // Réinitialiser le formulaire après un court délai
+  setTimeout(() => {
+    document.getElementById("contactForm").reset();
+    
+    // Réactiver le bouton
+    submitBtn.disabled = false;
+    spinner.classList.add("d-none");
+    buttonText.style.display = "inline";
+  }, 2000);
+
+  // Masquer le message après 5 secondes
+  setTimeout(() => {
+    statusMessage.classList.add("d-none");
+  }, 5000);
 
   // Fonctions utilitaires
   function showError(text) {
@@ -781,13 +821,6 @@ function sendMail() {
     statusMessage.textContent = text;
     statusMessage.className = "text-success";
     statusMessage.classList.remove("d-none");
-  }
-
-  function resetButtonState() {
-    submitBtn.disabled = false;
-    spinner.classList.add("d-none");
-    buttonText.style.display = "inline";
-    setTimeout(() => statusMessage.classList.add("d-none"), 5000);
   }
 }
 
